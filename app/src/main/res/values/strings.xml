@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ProyectoNativas</string>
+    <string name="app_name">Vent Ford</string>
+    <string name="categoriaExclusivos">Perfumes Exclusivos</string>
+    <string name="nombreProducto">Perfume</string>
+    <string name="precioProducto">$111.111</string>
+    <string name="añadir">Añadir</string>
 </resources>

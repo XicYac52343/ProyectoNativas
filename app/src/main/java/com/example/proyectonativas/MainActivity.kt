@@ -17,4 +17,4 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
-}https://github.com/XicYac52343/ProyectoNativas.git
+}
