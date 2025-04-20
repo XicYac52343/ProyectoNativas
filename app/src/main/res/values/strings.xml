@@ -4,4 +4,32 @@
     <string name="nombreProducto">Perfume</string>
     <string name="precioProducto">$111.111</string>
     <string name="añadir">Añadir</string>
+    <string name="nombre_app">Vent Ford</string>
+    <string name="sloganSplash">Descubre la esencia</string>
+    <string name="sloganpart2">de lujo</string>
+    <string name="imglogo">imglogo</string>
+    <string name="studios">studios</string>
+    <string name="textiniciosesion">¡Bienvenido de nuevo!</string>
+    <string name="textinicio">Iniciar Sesión</string>
+    <string name="btngoogleinicio">Iniciar sesión con google</string>
+    <string name="resgistrarinicio">¿No tienes cuenta?</string>
+    <string name="text2registro">Regístrate</string>
+    <string name="hintiniciarsesion">Introduzca su correo</string>
+    <string name="contrasenainicio">Introduzca su contraseña</string>
+    <string name="productosMenu">Productos</string>
+    <string name="categoriaMenu">Categorias</string>
+    <string name="favoritosMenu">Favoritos</string>
+    <string name="OfertasMenu">Ofertas</string>
+    <string name="Micuenta">Mi cuenta</string>
+    <string name="CerrarSesion">Cerrar sesion</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Cerrar\n</string>
+    <string name="menosbtn">-</string>
+    <string name="btnmenos">-</string>
+    <string name="btnmas">+</string>
+    <string name="productos_title">Productos</string>
+    <string name="favoritostitle">Favoritos</string>
+    <string name="cantidad_text">cantidad</string>
+    <string name="cantidadinicial">0</string>
+
 </resources>

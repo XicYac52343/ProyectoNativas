@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/iniciosesion">
+
+    <fragment
+        android:id="@+id/iniciosesion"
+        android:name="com.example.proyectonativas.fragments.iniciosesionFragment"
+        app:defaultNavHost="true"/>
+    <fragment
+        android:id="@+id/registro"
+        android:name="com.example.proyectonativas.fragments.RegistroFragment"
+        app:defaultNavHost="true"/>
+    <fragment
+        android:id="@+id/favoritos"
+        android:name="com.example.proyectonativas.fragments.FavoritoFragment"
+        app:defaultNavHost="true"
+        />
+
+
+
+
+</navigation>

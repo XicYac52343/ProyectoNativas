@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/productosFragment">
+
+    <fragment android:id="@+id/productosFragment"
+        android:name="com.example.proyectonativas.fragments.ProdutosFragment"
+        app:defaultNavHost="true"/>
+
+    <fragment android:id="@+id/favoritosFragment"
+        android:name="com.example.proyectonativas.fragments.FavoritoFragment"
+        app:defaultNavHost="true"/>
+
+
+
+
+</navigation>
