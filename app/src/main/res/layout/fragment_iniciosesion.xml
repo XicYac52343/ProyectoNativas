@@ -67,7 +67,7 @@
         android:textSize="30sp"
         android:fontFamily="@font/playfair_display_bold"
         android:layout_gravity="center_horizontal"
-        android:textColor="@color/burdeos"/>
+        android:textColor="@color/blanco"/>
 
     <Button
         android:id="@+id/btniniciarsesion"

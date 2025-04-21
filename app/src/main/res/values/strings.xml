@@ -31,5 +31,10 @@
     <string name="favoritostitle">Favoritos</string>
     <string name="cantidad_text">cantidad</string>
     <string name="cantidadinicial">0</string>
+    <string name="textfav">favorito</string>
+    <string name="cantidadstock">100</string>
+    <string name="unds">disponibles</string>
+    <string name="cantidadtext">cantidad</string>
+    <string name="preciotext">Precio:</string>
 
 </resources>

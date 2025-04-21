@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/productosrecycler"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
@@ -12,108 +12,205 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@color/negro"
+        style="@style/Edittex">
 
+        <!-- Imagen del producto -->
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="201dp"
-            app:srcCompat="@drawable/logo" />
+            style="@style/Edittex"
+            android:id="@+id/imagenProducto"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/nombreProducto" />
 
+        <!-- Sección de texto -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10sp">
+            android:layout_marginTop="8dp">
 
-            <TextView
-                android:id="@+id/nombreProducto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/nombreProducto"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/categoriaproducto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/categoriaExclusivos"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/precioProducto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="@string/precioProducto"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10sp"
-                android:fontFamily="@font/playfair_display_bold"
-                android:text="cantidad"
-                android:textSize="20sp" />
-
+            <!-- Nombre y categoría en horizontal -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/nombreProducto"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombreProducto"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/categoriaproducto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/categoriaExclusivos"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Precio a la izquierda y Stock a la derecha -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <!-- Grupo Precio -->
+                <LinearLayout
+                    android:id="@+id/priceGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/preciotext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/preciotext"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/blanco"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/precioProducto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:text="@string/precioProducto"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/blanco"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <!-- Grupo Stock -->
+                <LinearLayout
+                    android:id="@+id/stockGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/cantidadStock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cantidadstock"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/dorado"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textund"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/unds"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/dorado"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Título cantidad -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cantidad_text"
+                android:fontFamily="@font/playfair_display_bold"
+                android:textColor="@color/dorado"
+                android:textSize="20sp"
+                android:layout_marginTop="8dp" />
+
+            <!-- Botones + y - con valor centrado -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
 
                 <Button
                     android:id="@+id/btndism"
                     style="@style/btnprod"
-                    android:layout_width="48dp"
-                    android:layout_height="48sp"
-                    android:fontFamily="@font/playfair_display_bold"
-                    android:padding="0dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:text="@string/btnmenos"
-                    android:textColor="@color/negro"
-                    android:textSize="20dp"
-                    app:backgroundTint="@null" />
+                    android:textSize="20sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
 
                 <TextView
+                    android:id="@+id/cantidadinicial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15sp"
                     android:fontFamily="@font/playfair_display_bold"
-                    android:text="0"
+                    android:gravity="center_horizontal"
+                    android:text="@string/cantidadinicial"
+                    android:textColor="@color/blanco"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btnaume"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/btndism"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
                     android:id="@+id/btnaume"
                     style="@style/btnprod"
-                    android:layout_width="48sp"
-                    android:layout_height="48sp"
-                    android:fontFamily="@font/playfair_display_bold"
-                    android:padding="0dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:text="@string/btnmas"
-                    android:textColor="@color/negro"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@null" />
+                    android:textSize="25sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Favorito alineado al inicio -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/btnfav"
-                    style="@style/btnfav"
-                    android:layout_width="wrap_content"
+                    android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginStart="25sp"
-                    app:srcCompat="@drawable/corazon"/>
+                    app:srcCompat="@drawable/corazon" />
 
-
+                <TextView
+                    android:id="@+id/textfavo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:text="@string/textfav"
+                    android:textColor="@color/dorado"
+                    android:textSize="20sp" />
             </LinearLayout>
 
-
         </LinearLayout>
-
     </LinearLayout>
 
 
