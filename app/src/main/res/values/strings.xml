@@ -36,5 +36,11 @@
     <string name="unds">disponibles</string>
     <string name="cantidadtext">cantidad</string>
     <string name="preciotext">Precio:</string>
+    <string name="titletiendas">Tiendas cercanas</string>
+    <string name="sede_principal">Sede principal</string>
+    <string name="carrera_5b_este_25h_46">carrera 5b este # 25h 46</string>
+    <string name="horario">9:00 am - 6: 00 pm</string>
+    <string name="sede2">Sede- Aromas</string>
+    <string name="direccion2">Carrera 13a #32-c15</string>
 
 </resources>
