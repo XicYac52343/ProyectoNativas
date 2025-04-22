@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    --Degradado Producto
+    <style name="degradadoFondo" parent="Base.CardView">
+        <item name="android:background">@drawable/degradado_producto</item>
+    </style>
+
+    --Diseño Botón Agregar
+    <style name="botonFondoDorado" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/disenio_boton_agregar</item>"
+    </style>
+</resources>

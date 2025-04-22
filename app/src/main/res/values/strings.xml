@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Vent Ford</string>
     <string name="categoriaExclusivos">Perfumes Exclusivos</string>
-    <string name="nombreProducto">Perfume</string>
+    <string name="categoriaMasVendidos">Más vendidos</string>
+    <string name="nombreProducto">Élegance</string>
     <string name="precioProducto">$111.111</string>
     <string name="añadir">Añadir</string>
+    <string name="descuento">-%50</string>
+    <string name="descripcionProducto">Lume, un toque exclusivo y elegante que te acompañará todo tu día.</string>
+    <string name="estiloProducto1">Amaderado</string>
+    <string name="estiloSeparador"> | </string>
+    <string name="estiloProducto2">Exclusivo</string>
+
 </resources>

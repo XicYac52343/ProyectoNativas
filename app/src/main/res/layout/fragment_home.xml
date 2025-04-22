@@ -1,25 +1,533 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/negro">
 
     <LinearLayout
         android:id="@+id/linearLayourHome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_nombreCategoria"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/playfair_display_bold"
             android:text="@string/categoriaExclusivos"
             android:textColor="@color/blanco"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_marginLeft="5dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    --Aca empieza el segundo Scroll View
+        <TextView
+            android:id="@+id/tv_nombreCategoria"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/categoriaMasVendidos"
+            android:textColor="@color/blanco"
+            android:textSize="30sp"
+            android:layout_marginLeft="5dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+
     </LinearLayout>
 
 </ScrollView>
