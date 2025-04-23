@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fondo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20sp"
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/titletiendas"
+    android:textSize="30sp"
+    android:gravity="center"
+    android:fontFamily="@font/playfair_display_bold"
+    android:textColor="@color/dorado"
+    />
+    <ImageView
+        style="@style/Edittex"
+        android:layout_marginVertical="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/img"
+        />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/tienda"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+          <TextView
+              android:id="@+id/sede"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/sede_principal"
+              android:textSize="30sp"
+              android:fontFamily="@font/playfair_display_bold"
+              android:textColor="@color/dorado"/>
+
+            <TextView
+                android:id="@+id/direccion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carrera_5b_este_25h_46"
+                android:textSize="15sp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:textColor="@color/dorado"/>
+
+                <TextView
+                    android:id="@+id/horario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/horario"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--tienda dos -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="20sp">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                app:srcCompat="@drawable/tienda"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp">
+                <TextView
+                    android:id="@+id/sede2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sede2"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"/>
+
+                <TextView
+                    android:id="@+id/direccion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/direccion2"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"/>
+
+                <TextView
+                    android:id="@+id/horario2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/horario"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

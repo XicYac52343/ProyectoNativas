@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20sp"
+    android:orientation="vertical"
+    android:background="@color/negro">
+
+    <ImageView
+        android:id="@+id/imgsplash"
+        android:layout_width="match_parent"
+        android:layout_height="303dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginVertical="40sp"
+        android:contentDescription="@string/imglogo"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:text="@string/nombre_app"
+        android:textColor="@color/dorado"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display_bold"/>
+
+    <TextView
+        android:id="@+id/sloganparte1"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:text="@string/sloganSplash"
+        android:textColor="@color/blanco"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/playfair_display_bold"
+        android:layout_marginVertical="20sp"/>
+
+    <TextView
+        android:id="@+id/sloganparte2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sloganpart2"
+        android:textColor="@color/blanco"
+        android:textSize="30sp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:layout_gravity="center"
+      />
+    <TextView
+        android:id="@+id/creditosslogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/studios"
+        android:textColor="@color/dorado"
+        android:textSize="30sp"
+        android:fontFamily="@font/playfair_display_bold"
+        android:layout_gravity="right"
+        android:layout_marginTop="80sp"
+        />
+
+
+</LinearLayout>

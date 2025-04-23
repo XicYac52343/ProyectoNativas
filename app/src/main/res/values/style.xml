@@ -1,13 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    --Degradado Producto
-    <style name="degradadoFondo" parent="Base.CardView">
-        <item name="android:background">@drawable/degradado_producto</item>
+    <!-- Estilo para EditText con selector de estado y padding interno -->
+    <style name="Edittex" parent="@android:style/Widget.EditText">
+
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="android:textColorHint">@color/gris</item>
+        <item name="android:textSize">16sp</item>
+
     </style>
 
-    --Diseño Botón Agregar
-    <style name="botonFondoDorado" parent="android:style/Widget.Button">
-        <item name="android:background">@drawable/disenio_boton_agregar</item>"
+    <!-- Botón general con ripple y esquinas redondeadas -->
+    <style name="Btn" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btnsgeneral</item>
+
+        <item name="android:textColor">@color/negro</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/playfair_display_bold</item>
+        <item name="android:insetLeft">12dp</item>
+        <item name="android:insetRight">12dp</item>
+        <item name="android:insetTop">8dp</item>
+        <item name="android:insetBottom">8dp</item>
+    </style>
+
+    <!-- Fondo con gradiente -->
+    <style name="fondo">
+        <item name="android:background">@drawable/fondogradiente</item>
+    </style>
+
+    <!-- Estilo de menú de navegación -->
+    <style name="menu" >
+        <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/playfair_display_bold</item>
+    </style>
+
+    <!-- Botones de producto (+/-) -->
+    <style name="btnprod" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/btnproduct</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/playfair_display_bold</item>
+        <item name="android:textColor">@color/negro</item>
+
+    </style>
+
+    <!-- Botón de favorito as ImageButton -->
+    <style name="btnfav" parent="@android:style/Widget.ImageButton">
+        <item name="android:background">@drawable/sytileinput</item>
+        <item name="android:tint">@color/dorado</item>
+        <item name="android:padding">8dp</item>
     </style>
 
     --Diseño Botón Cerrar Sesión

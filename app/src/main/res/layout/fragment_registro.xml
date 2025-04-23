@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/negro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15sp">
+
+    <LinearLayout
+        style="@style/Edittex"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+    <!--imagen y titulo-->
+        <ImageView
+            android:id="@+id/imagenregistrotitle"
+            android:layout_width="181dp"
+            android:layout_height="100sp"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/textregistrotitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registrotitle"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+    </LinearLayout>
+
+        <!--nombre y editex-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/textnombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombretitle"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/nombre"
+            android:layout_marginStart="10sp"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintnombre"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+
+        <!--apellido y editex-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/textapellido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apellidotitle"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/apellido"
+            android:layout_marginStart="10sp"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintapellido"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+
+        <!--correo y editex-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/textcorreo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/correotitle"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/correo"
+            android:layout_marginStart="10sp"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintCorreo"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+        <!--telefono y editex-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/texttelf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/telefonotitle"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/telefono"
+            android:layout_marginStart="10sp"
+            android:autofillHints="@string/hintTelefono"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintTelefono"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+
+        <!--contraseña y editex-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/textpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passwordtitle"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/password"
+            android:layout_marginStart="10sp"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintPassword"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+<!--confirme la contraseña-->
+        <TextView
+            android:layout_marginTop="10sp"
+            android:id="@+id/textpassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passwordtitle2"
+            android:textSize="15sp"
+            android:layout_marginStart="10sp"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:id="@+id/password2"
+            android:layout_marginStart="10sp"
+            android:autofillHints="@string/hintPassword"
+            android:textColorHint="@color/blanco"
+            android:hint="@string/hintPassword"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:textColor="@color/dorado"
+            android:layout_marginVertical="15sp"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/TyC_regitro"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TyC_regitro"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:textColor="@color/dorado"
+        android:fontFamily="@font/playfair_display_bold"/>
+
+
+</LinearLayout>
+        <Button
+            android:id="@+id/button_registro"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/registrase_btn"
+            android:textColor="@color/dorado"
+            app:backgroundTint="@null"/>
+
+    </LinearLayout>
+
+</ScrollView>
