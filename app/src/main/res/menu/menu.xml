@@ -9,12 +9,15 @@
     <item android:id="@+id/categoriasFragment"
         android:title="@string/categoriaMenu"/>
 
-    <item android:id="@+id/favoritosFragment"
+    <item android:id="@+id/favoritoFragment"
         android:title="@string/favoritosMenu"/>
 
         <item android:id="@+id/OfertasFragment"
             android:title="@string/OfertasMenu"/>
         </group>
+    <item android:id="@+id/TiendasFragment"
+        android:title="@string/Tiendas"/>
+
     <item android:title=" ">
         <menu>
             <item android:id="@+id/MiPerfilFragment"

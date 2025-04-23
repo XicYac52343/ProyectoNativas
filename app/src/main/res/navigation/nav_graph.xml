@@ -12,13 +12,5 @@
         android:id="@+id/registro"
         android:name="com.example.proyectonativas.fragments.RegistroFragment"
         app:defaultNavHost="true"/>
-    <fragment
-        android:id="@+id/favoritos"
-        android:name="com.example.proyectonativas.fragments.FavoritoFragment"
-        app:defaultNavHost="true"
-        />
-
-
-
 
 </navigation>
