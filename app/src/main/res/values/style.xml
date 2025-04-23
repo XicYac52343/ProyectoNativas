@@ -33,7 +33,6 @@
 
     <!-- Estilo de menú de navegación -->
     <style name="menu" >
-        <item name="android:textColor">@color/dorado</item>
         <item name="android:textSize">30sp</item>
         <item name="android:fontFamily">@font/playfair_display_bold</item>
     </style>
