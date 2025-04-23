@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/negro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nombreCategoriax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/categoriaExclusivos"
+            android:textColor="@color/blanco"
+            android:textSize="30sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/degradado_producto_gris"
+                app:srcCompat="@drawable/fragancia_urbe" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville_bold"
+                    android:text="@string/nombreProducto"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/precioCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonmenos"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/menos"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_nombreCategorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/cantidadProductoCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="59dp" />
+
+
+                <Button
+                    android:id="@+id/buttonmas"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/mas"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_nombreCategoriaa"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/libre_baskerville"
+                android:text="@string/subtotalProductoCarrito"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/degradado_producto_gris"
+                app:srcCompat="@drawable/fragancia_urbe" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville_bold"
+                    android:text="@string/nombreProducto"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/precioCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonmenos"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/menos"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_nombreCategorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/cantidadProductoCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="59dp" />
+
+
+                <Button
+                    android:id="@+id/buttonmas"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/mas"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_nombreCategoriaa"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/libre_baskerville"
+                android:text="@string/subtotalProductoCarrito"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/degradado_producto_gris"
+                app:srcCompat="@drawable/fragancia_urbe" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville_bold"
+                    android:text="@string/nombreProducto"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/precioCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonmenos"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/menos"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_nombreCategorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/cantidadProductoCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="59dp" />
+
+
+                <Button
+                    android:id="@+id/buttonmas"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/mas"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_nombreCategoriaa"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/libre_baskerville"
+                android:text="@string/subtotalProductoCarrito"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="64dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/degradado_producto_gris"
+                app:srcCompat="@drawable/fragancia_urbe" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville_bold"
+                    android:text="@string/nombreProducto"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_nombreCategoria1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/precioCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/buttonmenos"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/menos"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null" />
+
+
+
+                <TextView
+                    android:id="@+id/tv_nombreCategorias"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/libre_baskerville"
+                    android:text="@string/cantidadProductoCarrito"
+                    android:textColor="@color/blanco"
+                    android:textSize="20sp"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="59dp" />
+
+
+                <Button
+                    android:id="@+id/buttonmas"
+                    style="@style/btnprod"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:padding="0dp"
+                    android:text="@string/mas"
+                    android:textSize="28dp"
+                    app:backgroundTint="@null"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_nombreCategoriaa"
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/libre_baskerville"
+                android:text="@string/subtotalProductoCarrito"
+                android:textColor="@color/blanco"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/dorado">
+
+            <Button
+                android:id="@+id/button"
+                style="@style/botonFondoNegro"
+                android:layout_width="205dp"
+                android:layout_height="55dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:padding="0dp"
+                android:text="@string/comprarCarrito"
+                android:textColor="@color/blanco"
+                android:textSize="28dp"
+                app:backgroundTint="@null" />
+
+            <TextView
+                android:id="@+id/tv_nombreCategoria1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/libre_baskerville_italic"
+                android:text="@string/totalCarrito"
+                android:textColor="@color/negro"
+                android:textSize="23sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
