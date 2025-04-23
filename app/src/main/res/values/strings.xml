@@ -60,5 +60,10 @@
     <string name="perfilTitle">Perfil</string>
     <string name="btneditinfo">Editar Informacion</string>
     <string name="btnsave">Guardar Información</string>
+    <string name="titleRecuperar">Recuperar contraseña</string>
+    <string name="textRecuperar">Indique el correo electronico asociado a su cuenta, se le enviara un email con las instrucciones para restablecer su contraseña</string>
+    <string name="labelcorreoRecu">introduzca su correo electronico</string>
+    <string name="btnrecuperar">Recuperar Contrasela</string>
+    <string name="LinkRecuperarContra">Olvidé mi contraseña</string>
 
 </resources>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/negro">
+    style="@style/fondo">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:textStyle="bold"
@@ -49,7 +49,7 @@
             android:textSize="20sp"
             android:layout_gravity="center"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
 
         <!--apellidos-->
@@ -62,7 +62,7 @@
             android:textSize="20sp"
             android:layout_marginStart="10sp"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:textStyle="bold"
@@ -74,7 +74,7 @@
             android:textSize="20sp"
             android:layout_gravity="center"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
 
         <!--correo-->
@@ -87,7 +87,7 @@
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -99,7 +99,7 @@
             android:textSize="20sp"
             android:layout_gravity="center"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
         <!--telefono-->
 
@@ -112,7 +112,7 @@
             android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado"
+            android:textColor="@color/blanco"
             android:layout_marginBottom="10dp"/>
         <TextView
             android:id="@+id/telefonouser"
@@ -123,7 +123,7 @@
             android:textSize="20sp"
             android:layout_gravity="center"
             android:fontFamily="@font/playfair_display_bold"
-            android:textColor="@color/dorado" />
+            android:textColor="@color/blanco" />
 
         <Button
             android:id="@+id/btneditarinfo"
@@ -131,8 +131,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btneditinfo"
-            app:backgroundTint="@color/dorado"
-            android:textColor="@color/burdeos"
+            app:backgroundTint="@color/negro"
+            android:textColor="@color/dorado"
             android:fontFamily="@font/playfair_display_bold"
             />
 

@@ -24,9 +24,7 @@
         android:name="com.example.proyectonativas.fragments.PerfilFragment"
         app:defaultNavHost="true"/>
 
-    <activity android:id="@+id/CerrarSesion"
-        android:name="com.example.proyectonativas.LoginActivity"
-        app:defaultNavHost="true"/>
+
 
 
 

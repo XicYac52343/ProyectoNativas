@@ -18,6 +18,7 @@ import com.example.proyectonativas.R
 
 class iniciosesionFragment : Fragment() {
 
+    private lateinit var linkcontrasena: TextView
     private lateinit var btniniciarsesion: Button
     private lateinit var sharedPreference: SharedPreferences
     private lateinit var getTextCorreo: String
@@ -46,9 +47,13 @@ class iniciosesionFragment : Fragment() {
             iniciarSesion()
         }
 
+        linkcontrasena = view.findViewById(R.id.Olvidemicontraseña)
+        linkcontrasena.setOnClickListener {
+            findNavController(this).navigate(R.id.RecuperarFragment)
+        }
+
         Linkregistrarse=view.findViewById(R.id.texts2registro)
             Linkregistrarse.setOnClickListener {
-
             findNavController(this).navigate(R.id.registro)
         }
 

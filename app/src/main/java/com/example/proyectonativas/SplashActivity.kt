@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity () {
             val intent = Intent(this, LoginregistroActivity::class.java)
             startActivity(intent)
             finish()
-        },3000)
+        },1500)
     }
 
     override fun onStart() {

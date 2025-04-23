@@ -13,4 +13,8 @@
         android:name="com.example.proyectonativas.fragments.RegistroFragment"
         app:defaultNavHost="true"/>
 
+    <fragment android:id="@+id/RecuperarFragment"
+        android:name="com.example.proyectonativas.fragments.RecuperarcontraFragment"
+        app:defaultNavHost="true"/>
+
 </navigation>

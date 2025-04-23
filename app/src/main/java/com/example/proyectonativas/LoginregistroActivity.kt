@@ -34,6 +34,7 @@ class LoginregistroActivity : AppCompatActivity()  {
             setOf(
                 R.id.iniciosesion,
                 R.id.registro,
+                R.id.RecuperarFragment
             ),
             drawerLayout
         )
