@@ -38,13 +38,13 @@ class FavoritoFragment : Fragment() {
             return view
     }
 
-    fun actualizarNumeromas() {
+    private fun actualizarNumeromas() {
        val cantidadactualida = numero.text.toString().toInt()
         numero.text = (cantidadactualida + 1).toString()
 
     }
 
-    fun actualizarNumeromenos() {
+    private fun actualizarNumeromenos() {
         if (numero.text.toString().toInt() > 0) {
             val cantidadactualida = numero.text.toString().toInt()
             numero.text = (cantidadactualida - 1).toString()

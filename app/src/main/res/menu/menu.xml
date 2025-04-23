@@ -2,9 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group
        android:checkableBehavior="single">
+
+
         <item android:id="@+id/productosFragment"
             android:title="@string/productosMenu"
-            style="@themes/MyNavigationViewStyle"/>
+            />
 
     <item android:id="@+id/categoriasFragment"
         android:title="@string/categoriaMenu"/>
