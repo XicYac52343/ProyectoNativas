@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/fondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20sp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/headerrecuperar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titleRecuperar"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/dorado"
+            android:textSize="30sp"
+            android:layout_marginStart="10sp"/>
+
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/recontrasena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/textRecuperar"
+            android:textColor="@color/blanco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_recontrasena_correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/labelcorreoRecu"
+            android:textColor="@color/blanco"
+            android:textSize="15sp"/>
+
+        <EditText
+            style="@style/Edittex"
+            android:id="@+id/recontrasena_correo"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:ems="40"
+            android:hint="@string/labelcorreoRecu"
+            android:inputType="text"
+            android:textColor="@color/dorado"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginTop="50sp"
+            android:id="@+id/btn_recuperar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dorado"
+            android:text="@string/btnrecuperar"
+            app:backgroundTint="@color/burdeos"
+            android:layout_gravity="center"
+          />
+    </LinearLayout>
+
+</ScrollView>

@@ -15,6 +15,8 @@
     <string name="resgistrarinicio">¿No tienes cuenta?</string>
     <string name="text2registro">Regístrate</string>
     <string name="hintiniciarsesion">Introduzca su correo</string>
+    <string name="hintnombre">Introduzca su nombre</string>
+    <string name="hintapellido">Introduzca su apellido</string>
     <string name="contrasenainicio">Introduzca su contraseña</string>
     <string name="productosMenu">Productos</string>
     <string name="categoriaMenu">Categorias</string>
@@ -42,5 +44,26 @@
     <string name="horario">9:00 am - 6: 00 pm</string>
     <string name="sede2">Sede- Aromas</string>
     <string name="direccion2">Carrera 13a #32-c15</string>
+    <string name="nombretitle">Nombre</string>
+    <string name="apellidotitle">Apellido</string>
+    <string name="registrotitle">Registro</string>
+    <string name="hintCorreo">Introduzca su correo</string>
+    <string name="correotitle">Correo</string>
+    <string name="passwordtitle">Contraseña</string>
+    <string name="hintPassword">introduzca su contraseña</string>
+    <string name="passwordtitle2">Confirme la contraseña</string>
+    <string name="registrase_btn">Registrase</string>
+    <string name="TyC_regitro">Acepto terminos y condiciones</string>
+    <string name="telefonotitle">Telefono</string>
+    <string name="hintTelefono">Introduzca su telefono</string>
+    <string name="Tiendas">Tiendas</string>
+    <string name="perfilTitle">Perfil</string>
+    <string name="btneditinfo">Editar Informacion</string>
+    <string name="btnsave">Guardar Información</string>
+    <string name="titleRecuperar">Recuperar contraseña</string>
+    <string name="textRecuperar">Indique el correo electronico asociado a su cuenta, se le enviara un email con las instrucciones para restablecer su contraseña</string>
+    <string name="labelcorreoRecu">introduzca su correo electronico</string>
+    <string name="btnrecuperar">Recuperar Contrasela</string>
+    <string name="LinkRecuperarContra">Olvidé mi contraseña</string>
 
 </resources>

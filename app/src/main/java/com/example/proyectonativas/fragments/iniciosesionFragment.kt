@@ -18,12 +18,14 @@ import com.example.proyectonativas.R
 
 class iniciosesionFragment : Fragment() {
 
+    private lateinit var linkcontrasena: TextView
     private lateinit var btniniciarsesion: Button
     private lateinit var sharedPreference: SharedPreferences
     private lateinit var getTextCorreo: String
     private lateinit var getTextContrasena: String
     private lateinit var Acorreo: EditText
     private lateinit var Acontrasena: EditText
+    private lateinit var Linkregistrarse: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,22 +33,29 @@ class iniciosesionFragment : Fragment() {
         savedInstanceState: Bundle?
         ): View? {
         val view = inflater.inflate(R.layout.fragment_iniciosesion, container, false)
-        sharedPreference = requireContext().getSharedPreferences("MiPref", Context.MODE_PRIVATE)
+        sharedPreference = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
 
-        datos()
         getTextCorreo = sharedPreference.getString("correo", "Useremail") ?: "Useremail";
         getTextContrasena =
             sharedPreference.getString("contrasena", "Usercontrasena") ?: "Usercontrasena";
 
         Acorreo = view.findViewById(R.id.correo)
-        Acontrasena = view.findViewById(R.id.contrasena)
+        Acontrasena = view.findViewById(R.id.passwordInicio)
 
       btniniciarsesion=view.findViewById(R.id.btniniciarsesion)
         btniniciarsesion.setOnClickListener {
             iniciarSesion()
         }
 
+        linkcontrasena = view.findViewById(R.id.Olvidemicontraseña)
+        linkcontrasena.setOnClickListener {
+            findNavController(this).navigate(R.id.RecuperarFragment)
+        }
 
+        Linkregistrarse=view.findViewById(R.id.texts2registro)
+            Linkregistrarse.setOnClickListener {
+            findNavController(this).navigate(R.id.registro)
+        }
 
         return view
     }
@@ -65,12 +74,6 @@ class iniciosesionFragment : Fragment() {
         }
     }
 
-    private fun datos(){
-            val editor = sharedPreference.edit()
-        editor.putString("correo", "nicolaspoveda000@gmail.com")
-        editor.putString("contrasena", "1234")
-        editor.apply()
-    }
     private fun main(){
         val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)

@@ -8,9 +8,23 @@
         android:name="com.example.proyectonativas.fragments.ProdutosFragment"
         app:defaultNavHost="true"/>
 
-    <fragment android:id="@+id/favoritosFragment"
+    <fragment android:id="@+id/favoritoFragment"
         android:name="com.example.proyectonativas.fragments.FavoritoFragment"
         app:defaultNavHost="true"/>
+
+    <fragment android:id="@+id/TiendasFragment"
+        android:name="com.example.proyectonativas.fragments.TiendasFragment"
+        app:defaultNavHost="true"/>
+
+    <fragment android:id="@+id/EditarPerfilFragment"
+        android:name="com.example.proyectonativas.fragments.EditInfoFragment"
+        app:defaultNavHost="true"/>
+
+    <fragment android:id="@+id/MiPerfilFragment"
+        android:name="com.example.proyectonativas.fragments.PerfilFragment"
+        app:defaultNavHost="true"/>
+
+
 
 
 
