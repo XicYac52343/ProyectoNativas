@@ -33,7 +33,6 @@ class PerfilAdminFragment : Fragment() {
         val graficaProductos = view.findViewById<LineChart>(R.id.graficaProductos)
 
 
-        // Tus datos (X, Y)
         val entries = listOf(
             Entry(1f, 10f),
             Entry(2f, 20f),
@@ -58,7 +57,6 @@ class PerfilAdminFragment : Fragment() {
         graficaUsuarios.data = lineData
         graficaProductos.data = lineData
 
-        // Opcional: configuración del eje X
         val xAxis: XAxis = lineChart.xAxis
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.textColor = ContextCompat.getColor(requireContext(), R.color.blanco)
@@ -95,7 +93,6 @@ class PerfilAdminFragment : Fragment() {
 
         val rightAxisProductos = graficaProductos.axisRight
 
-        // Refrescar gráfico
         lineChart.invalidate()
         lineChart1.invalidate()
         graficaUsuarios.invalidate()
