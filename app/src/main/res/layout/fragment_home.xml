@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_nombreCategoria"
+            android:id="@+id/tv_nombrePrimerCategoriaHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/playfair_display_bold"
@@ -39,7 +39,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_primerProductoExcluHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -47,7 +47,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombrePrimerProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -57,7 +57,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioPrimerProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -67,7 +67,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarPrimerProductoExcluHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -86,7 +86,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_segundoProductoExcluHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -94,7 +94,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreSegundoProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -104,7 +104,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioSegundoProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -114,7 +114,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarSegundoProductoExcluHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -132,7 +132,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_tercerProductoExcluHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -140,7 +140,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreTercerProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -150,7 +150,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioTercerProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -160,54 +160,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
-                        style="@style/botonFondoDorado"
-                        android:layout_width="110dp"
-                        android:layout_height="50dp"
-                        android:fontFamily="@font/playfair_display_bold"
-                        android:padding="0dp"
-                        android:text="@string/añadir"
-                        android:textSize="23dp"
-                        app:backgroundTint="@null" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/degradado_producto"
-                        app:srcCompat="@drawable/fragancia_urbe" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/libre_baskerville_bold"
-                        android:text="@string/nombreProducto"
-                        android:textAlignment="center"
-                        android:textColor="@color/burdeos"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/playfair_display_bold"
-                        android:text="@string/precioProducto"
-                        android:textAlignment="center"
-                        android:textColor="@color/dorado"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarTercerProductoExcluHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -226,7 +179,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_cuartoProductoExcluHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -234,7 +187,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreCuartoProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -244,7 +197,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioCuartoProductoExcluHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -254,7 +207,54 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarCuartoProductoExcluHome"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_quintoProductoExcluHome"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/tv_nombreQuintoProductoExcluHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tv_precioQuintoProductoExcluHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/bt_agregarQuintoProductoExcluHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -268,17 +268,17 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-    --Aca empieza el segundo Scroll View
+
         <TextView
-            android:id="@+id/tv_nombreCategoria"
-            android:layout_marginTop="25dp"
+            android:id="@+id/tv_nombreSegundaCategoriaHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/playfair_display_bold"
             android:text="@string/categoriaMasVendidos"
             android:textColor="@color/blanco"
-            android:textSize="30sp"
-            android:layout_marginLeft="5dp"/>
+            android:textSize="30sp" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -297,7 +297,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_primerProductoVendiHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -305,7 +305,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombrePrimerProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -315,7 +315,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioPrimerProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -325,7 +325,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarPrimerProductoVendiHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -344,7 +344,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_segundoProductoVendiHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -352,7 +352,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreSegundoProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -362,7 +362,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioSegundoProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -372,7 +372,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarSegundoProductoVendiHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -390,7 +390,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_tercerProductoVendiHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -398,7 +398,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreTercerProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -408,7 +408,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioTercerProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -418,54 +418,7 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
-                        style="@style/botonFondoDorado"
-                        android:layout_width="110dp"
-                        android:layout_height="50dp"
-                        android:fontFamily="@font/playfair_display_bold"
-                        android:padding="0dp"
-                        android:text="@string/añadir"
-                        android:textSize="23dp"
-                        app:backgroundTint="@null" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/degradado_producto_gris"
-                        app:srcCompat="@drawable/fragancia_urbe" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/libre_baskerville_bold"
-                        android:text="@string/nombreProducto"
-                        android:textAlignment="center"
-                        android:textColor="@color/burdeos"
-                        android:textSize="25sp" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/playfair_display_bold"
-                        android:text="@string/precioProducto"
-                        android:textAlignment="center"
-                        android:textColor="@color/dorado"
-                        android:textSize="30sp" />
-
-                    <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarTercerProductoVendiHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"
@@ -484,7 +437,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/imageView8"
+                        android:id="@+id/iv_cuartoProductoVendiHome"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:layout_margin="10dp"
@@ -492,7 +445,7 @@
                         app:srcCompat="@drawable/fragancia_urbe" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/tv_nombreCuartoProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/libre_baskerville_bold"
@@ -502,7 +455,7 @@
                         android:textSize="25sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioCuartoProductoVendiHome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/playfair_display_bold"
@@ -512,7 +465,54 @@
                         android:textSize="30sp" />
 
                     <Button
-                        android:id="@+id/button"
+                        android:id="@+id/bt_agregarCuartoProductoVendiHome"
+                        style="@style/botonFondoDorado"
+                        android:layout_width="110dp"
+                        android:layout_height="50dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:padding="0dp"
+                        android:text="@string/añadir"
+                        android:textSize="23dp"
+                        app:backgroundTint="@null" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_quintoProductoVendiHome"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/degradado_producto_gris"
+                        app:srcCompat="@drawable/fragancia_urbe" />
+
+                    <TextView
+                        android:id="@+id/tv_nombreQuintoProductoVendiHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/libre_baskerville_bold"
+                        android:text="@string/nombreProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/burdeos"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/tv_precioQuintoProductoVendiHome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/precioProducto"
+                        android:textAlignment="center"
+                        android:textColor="@color/dorado"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/bt_agregarQuintoProductoVendiHome"
                         style="@style/botonFondoDorado"
                         android:layout_width="110dp"
                         android:layout_height="50dp"

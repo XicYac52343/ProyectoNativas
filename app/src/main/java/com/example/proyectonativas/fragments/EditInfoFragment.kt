@@ -40,8 +40,8 @@ class EditInfoFragment : Fragment() {
         getcorreo_perfil = sharedPreference.getString("correo", "Useremail") ?: "Useremail";
         gettelefono_perfil = sharedPreference.getString("telefono", "Usertelefono") ?: "Usertelefono";
 
-        Editnombres_perfil = view.findViewById(R.id.nombreuser_edit);
-        Editapellido_perfil= view.findViewById(R.id.apellidouser_edit);
+        Editnombres_perfil = view.findViewById(R.id.et_nombreEditarUsuario);
+        Editapellido_perfil= view.findViewById(R.id.et_apellidoEditarUsuario);
         Editcorreo_perfil=view.findViewById(R.id.correouser_edit);
         Edittelefono_perfil=view.findViewById(R.id.telefonouser_edit);
 

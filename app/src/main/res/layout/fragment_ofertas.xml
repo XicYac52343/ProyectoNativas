@@ -18,12 +18,12 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_nombreCategoria"
+                android:id="@+id/tv_tituloOfertas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/playfair_display_bold"
-                android:text="@string/categoriaExclusivos"
+                android:text="@string/descuentosText"
                 android:textColor="@color/blanco"
                 android:textSize="30sp" />
 
@@ -43,7 +43,7 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_primerProductoOfertas"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -81,7 +81,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombrePrimerProductoOfertas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -96,7 +96,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioAntesPrimerProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -105,11 +105,10 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/burdeos"
-                        android:textDecoration="line-through"
                         android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_cantidadDescuentoPrimerProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -118,13 +117,12 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/blanco"
-                        android:textDecoration="line-through"
-                        android:textSize="30sp" />
+                        android:textSize="23sp" />
                 </LinearLayout>
 
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tv_precioDespuesPrimerProductoOfertas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -133,11 +131,10 @@
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="@color/dorado"
-                    android:textDecoration="line-through"
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarPrimerProductoOfertas"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -157,7 +154,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_segundoProductoOfertas"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -196,7 +193,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreSegundoProductoOfertas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -211,7 +208,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioAntesSegundoProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -220,11 +217,10 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/burdeos"
-                        android:textDecoration="line-through"
                         android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_cantidadDescuentoSegundoProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -233,12 +229,11 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/blanco"
-                        android:textDecoration="line-through"
-                        android:textSize="30sp" />
+                        android:textSize="23sp" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_precioDespuesSegundoProductoOfertas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -249,7 +244,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarSegundoProductoOfertas"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -276,7 +271,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_tercerProductoOfertas"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -315,7 +310,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreTercerProductoOfertas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -330,7 +325,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioAntesTercerProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -339,11 +334,10 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/burdeos"
-                        android:textDecoration="line-through"
                         android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_cantidadDescuentoTercerProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -352,12 +346,11 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/blanco"
-                        android:textDecoration="line-through"
-                        android:textSize="30sp" />
+                        android:textSize="23sp" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tv_precioDespuesTercerProductoOfertas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -368,7 +361,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarTercerProductoOfertas"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -388,7 +381,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_cuartoProductoOfertas"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -427,7 +420,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreCuartoProductoOfertas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -442,7 +435,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_precioAntesCuartoProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -451,11 +444,10 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/burdeos"
-                        android:textDecoration="line-through"
                         android:textSize="30sp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/tv_cantidadDescuentoCuartoProductoOfertas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-11dp"
@@ -464,12 +456,11 @@
                         android:textAlignment="center"
                         android:textAllCaps="false"
                         android:textColor="@color/blanco"
-                        android:textDecoration="line-through"
-                        android:textSize="30sp" />
+                        android:textSize="23sp" />
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tv_precioDespuesCuartoProductoOfertas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -480,7 +471,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarCuartoProductoOfertas"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
