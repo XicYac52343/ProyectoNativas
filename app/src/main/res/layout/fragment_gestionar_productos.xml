@@ -13,20 +13,35 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <TextView
-                android:id="@+id/tv_nombreCategoria"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_gestionProductosTitulo"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="@font/playfair_display_bold"
-                android:text="@string/categoriaExclusivos"
+                android:text="@string/productosGrafica"
+                android:textAlignment="textStart"
                 android:textColor="@color/blanco"
                 android:textSize="30sp" />
 
+            <Button
+                android:id="@+id/bt_agregarProducto"
+                style="@style/btnprod"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:padding="0dp"
+                android:text="@string/mas"
+                android:textAlignment="center"
+                android:textSize="28dp"
+                app:backgroundTint="@null" />
+
         </LinearLayout>
 
 
@@ -42,7 +57,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_primerProductoGestionPro"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -81,7 +96,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombrePrimerProductoGestionPro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -91,7 +106,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioPrimerProductoGestionPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -102,7 +117,7 @@
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_categoriaPrimerProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -112,7 +127,7 @@
                     android:textSize="23sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_cantidadPrimerProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -122,7 +137,7 @@
                     android:textSize="23sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_editarPrimerGestionPro"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -142,7 +157,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_segundoProductoGestionPro"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -181,7 +196,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreSegundoProductoGestionPro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -191,7 +206,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioSegundoProductoGestionPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -202,7 +217,7 @@
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_categoriaSegundoProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -212,7 +227,7 @@
                     android:textSize="23sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_cantidadSegundoProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -222,7 +237,7 @@
                     android:textSize="23sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_editarSegundoGestionPro"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -249,7 +264,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_tercerProductoGestionPro"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -288,7 +303,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreTercerProductoGestionPro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -298,7 +313,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioTercerProductoGestionPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -309,7 +324,7 @@
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_categoriaTercerProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -319,7 +334,7 @@
                     android:textSize="23sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_cantidadTercerProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -329,7 +344,7 @@
                     android:textSize="23sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_editarTercerGestionPro"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -349,7 +364,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_cuartoProductoGestionPro"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -388,7 +403,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreCuartoProductoGestionPro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -398,7 +413,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioCuartoProductoGestionPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -409,7 +424,7 @@
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_categoriaCuartoProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -419,7 +434,7 @@
                     android:textSize="23sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_cantidadCuartoProductoGestionPro"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -429,7 +444,7 @@
                     android:textSize="23sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_editarCuartoGestionPro"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"

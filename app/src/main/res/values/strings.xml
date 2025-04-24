@@ -2,7 +2,8 @@
     <string name="app_name">Vent Ford</string>
     <string name="categoriaExclusivos">Perfumes Exclusivos</string>
     <string name="nombreProducto">Perfume</string>
-    <string name="precioProducto">$111.111</string>
+    <string name="precioProducto">$120.000</string>
+    <string name="categoriaMasVendidos">Más vendidos</string>
     <string name="añadir">Añadir</string>
     <string name="descuento">-%50</string>
     <string name="descripcionProducto">Lume, un toque exclusivo y elegante que te acompañará todo tu día.</string>
@@ -14,8 +15,8 @@
     <string name="pedidosGrafica">Pedidos</string>
     <string name="ingresosGrafica">Ingresos</string>
     <string name="usuariosGrafica">Usuarios</string>
-    <string name="productosGrafica">Productos</string>
     <string name="gestionProductos">Gestión Productos</string>
+    <string name="productosGrafica">Productos</string>
     <string name="gestionPedidos">Gestión Pedidos</string>
     <string name="gestionUsuarios">Gestión Usuarios</string>
     <string name="cerrarSesion">Cerrar Sesión</string>
@@ -30,6 +31,7 @@
     <string name="cantidad">Cantidad</string>
     <string name="descripcion">Descripción</string>
     <string name="descuentoText">Descuento</string>
+    <string name="descuentosText">Descuentos</string>
     <string name="crear">Crear</string>
     <string name="cancelar">Cancelar</string>
     <string name="carrito">Carrito</string>
@@ -40,10 +42,19 @@
     <string name="favorito">Favorito</string>
     <string name="precioCarrito">Precio: $120.500</string>
     <string name="cantidadProductoCarrito">3</string>
+    <string name="cantidadProductoCarritoLabel">Cantidad: </string>
     <string name="subtotalProductoCarrito">$262.000</string>
     <string name="comprarCarrito">Comprar</string>
-    <string name="totalCarrito">Total: $542.000</string>
+    <string name="totalCarrito">Total: $0.0</string>
     <string name="pedidos">Pedidos</string>
+    <string name="admin">Admin</string>
+    <string name="administracion">Administración</string>
+    <string name="cantidadProducto">0</string>
+    <string name="precioLabel">Precio: </string>
+    <string name="subTotalLabel">Subtotal: </string>
+    <string name="simboloPesos">$</string>
+    <string name="totalLabel">Total: </string>
+    <string name="noHayProductos">No hay Productos </string>
 
     <string name="id">ID</string>
     <string name="estadoPedido">Estado Pedido</string>

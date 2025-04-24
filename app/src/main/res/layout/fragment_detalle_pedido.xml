@@ -13,6 +13,7 @@
         android:padding="10dp">
 
     <TextView
+        android:id="@+id/tv_pedidosTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pedidos"
@@ -27,7 +28,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/tv_labelID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -36,13 +37,13 @@
                 android:text="@string/id"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView13"
+                app:layout_constraintEnd_toStartOf="@+id/tv_idDetallePedido"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tv_idDetallePedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -56,6 +57,7 @@
                 tools:layout_editor_absoluteY="0dp" />
 
             <TextView
+                android:id="@+id/tv_labelEstado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -65,14 +67,14 @@
                 android:text="@string/estado"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView19"
-                app:layout_constraintEnd_toStartOf="@+id/textView17"
+                app:layout_constraintBottom_toTopOf="@+id/tv_labelFecha"
+                app:layout_constraintEnd_toStartOf="@+id/tv_estadoDetallePedido"
                 app:layout_constraintHorizontal_bias="0.701"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/tv_estadoDetallePedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -82,12 +84,12 @@
                 android:text="@string/estadoPedidoEj"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView20"
+                app:layout_constraintBottom_toTopOf="@+id/tv_fechaDetallePedido0"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_idDetallePedido" />
 
             <TextView
-                android:id="@+id/textView19"
+                android:id="@+id/tv_labelFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -97,13 +99,13 @@
                 android:text="@string/fecha"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView22"
-                app:layout_constraintEnd_toStartOf="@+id/textView20"
+                app:layout_constraintBottom_toTopOf="@+id/tv_labelMonto"
+                app:layout_constraintEnd_toStartOf="@+id/tv_fechaDetallePedido0"
                 app:layout_constraintHorizontal_bias="0.723"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/tv_fechaDetallePedido0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -117,7 +119,7 @@
                 tools:layout_editor_absoluteY="107dp" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/tv_labelMonto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -126,12 +128,12 @@
                 android:text="@string/monto"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView23"
+                app:layout_constraintEnd_toStartOf="@+id/tv_montoDetallePedido"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="150dp" />
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/tv_montoDetallePedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -145,6 +147,7 @@
                 tools:layout_editor_absoluteY="150dp" />
 
             <TextView
+                android:id="@+id/tv_labelCliente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -153,13 +156,13 @@
                 android:text="@string/cliente"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView26"
+                app:layout_constraintEnd_toStartOf="@+id/tv_clienteDetallePedido"
                 app:layout_constraintHorizontal_bias="0.451"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="200dp" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/tv_clienteDetallePedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -173,6 +176,7 @@
                 tools:layout_editor_absoluteY="200dp" />
 
             <TextView
+                android:id="@+id/tv_labelMetodoPago"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -181,13 +185,13 @@
                 android:text="@string/metodoPago"
                 android:textColor="@color/blanco"
                 android:textSize="30sp"
-                app:layout_constraintEnd_toStartOf="@+id/textView27"
+                app:layout_constraintEnd_toStartOf="@+id/tv_metodoDetallePedido"
                 app:layout_constraintHorizontal_bias="0.641"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="250dp" />
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/tv_metodoDetallePedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

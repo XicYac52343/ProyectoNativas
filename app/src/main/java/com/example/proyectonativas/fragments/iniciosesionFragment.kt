@@ -31,18 +31,19 @@ class iniciosesionFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-        ): View? {
+    ): View? {
         val view = inflater.inflate(R.layout.fragment_iniciosesion, container, false)
         sharedPreference = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
 
         getTextCorreo = sharedPreference.getString("correo", "Useremail") ?: "Useremail";
+
         getTextContrasena =
             sharedPreference.getString("contrasena", "Usercontrasena") ?: "Usercontrasena";
 
         Acorreo = view.findViewById(R.id.correo)
         Acontrasena = view.findViewById(R.id.passwordInicio)
 
-      btniniciarsesion=view.findViewById(R.id.btniniciarsesion)
+        btniniciarsesion = view.findViewById(R.id.btniniciarsesion)
         btniniciarsesion.setOnClickListener {
             iniciarSesion()
         }
@@ -52,36 +53,42 @@ class iniciosesionFragment : Fragment() {
             findNavController(this).navigate(R.id.RecuperarFragment)
         }
 
-        Linkregistrarse=view.findViewById(R.id.texts2registro)
-            Linkregistrarse.setOnClickListener {
+        Linkregistrarse = view.findViewById(R.id.texts2registro)
+        Linkregistrarse.setOnClickListener {
             findNavController(this).navigate(R.id.registro)
         }
 
         return view
     }
+
     private fun iniciarSesion() {
         val correoIngresado = Acorreo.text.toString().trim()
         val contrasenaIngresado = Acontrasena.text.toString().trim()
 
-        if (correoIngresado == getTextCorreo && contrasenaIngresado == getTextContrasena) {
+        if (correoIngresado == getTextCorreo && contrasenaIngresado == getTextContrasena || correoIngresado == "admin" && contrasenaIngresado == "admin") {
             // Login exitoso
+
+            if(correoIngresado == "admin" && contrasenaIngresado == "admin"){
+                val editor = sharedPreference.edit()
+                editor.putString("rol", "admin")
+                editor.apply()
+            }
+
             Toast.makeText(requireContext(), "Login exitoso", Toast.LENGTH_SHORT).show()
-          main()
+            main()
 
         } else {
             // Login fallido
-            Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT)
+                .show()
         }
     }
 
-    private fun main(){
+    private fun main() {
         val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent)
         requireActivity().finish()
     }
-
-
-
 
 
 }

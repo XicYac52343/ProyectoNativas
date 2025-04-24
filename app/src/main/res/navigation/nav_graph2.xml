@@ -4,29 +4,131 @@
     android:id="@+id/nav_graph2"
     app:startDestination="@id/productosFragment">
 
-    <fragment android:id="@+id/productosFragment"
-        android:name="com.example.proyectonativas.fragments.ProdutosFragment"
-        app:defaultNavHost="true"/>
 
-    <fragment android:id="@+id/favoritoFragment"
+    <fragment
+        android:id="@+id/productosFragment"
+        android:name="com.example.proyectonativas.fragments.HomeFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/OfertasFragment"
+        android:name="com.example.proyectonativas.fragments.OfertasFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/PerfilAdminFragment"
+        android:name="com.example.proyectonativas.fragments.PerfilAdminFragment"
+        app:defaultNavHost="true">
+
+        <action
+            android:id="@+id/action_perfilAdminAGestionProductos"
+            app:destination="@id/GestionarProductosFragment" />
+
+        <action
+            android:id="@+id/action_perfilAdminAGestionPedidos"
+            app:destination="@id/GestionarPedidosFragment" />
+
+        <action
+            android:id="@+id/action_perfilAdminAGestionUsuarios"
+            app:destination="@id/GestionarUsuariosFragment" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/GestionarProductosFragment"
+        android:name="com.example.proyectonativas.fragments.GestionarProductosFragment"
+        app:defaultNavHost="true">
+
+        <action
+            android:id="@+id/action_gestionarProductosFragment_A_agregarProductoFragment"
+            app:destination="@id/AgregarProductoFragment" />
+
+        <action
+            android:id="@+id/action_gestionarProductosFragment_A_editarProductoFragment"
+            app:destination="@id/EditarProductoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/AgregarProductoFragment"
+        android:name="com.example.proyectonativas.fragments.AgregarProductoFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/EditarUsuarioAdminFragment"
+        android:name="com.example.proyectonativas.fragments.EditarUsuarioAdminFragment"
+        app:defaultNavHost="true" />
+    <fragment
+        android:id="@+id/DetallePedidoAdminFragment"
+        android:name="com.example.proyectonativas.fragments.DetallePedidoAdminFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/CarritoFragment"
+        android:name="com.example.proyectonativas.fragments.CarritoFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/categoriasFragment"
+        android:name="com.example.proyectonativas.fragments.CategoriasFragment"
+        app:defaultNavHost="true">
+
+        <action
+            android:id="@+id/action_categoriaAProducto"
+            app:destination="@id/productoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/GestionarPedidosFragment"
+        android:name="com.example.proyectonativas.fragments.GestionarPedidosFragment"
+        app:defaultNavHost="true">
+
+        <action
+            android:id="@+id/action_pedidoADetallePedido"
+            app:destination="@id/DetallePedidoAdminFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/GestionarUsuariosFragment"
+        android:name="com.example.proyectonativas.fragments.GestionarUsuariosFragment"
+        app:defaultNavHost="true" />
+
+    <action
+        android:id="@+id/action_gestionarUsuarioFragment_A_editarUsuarioAdminFragment"
+        app:destination="@id/EditarUsuarioAdminFragment" />
+
+    <fragment
+        android:id="@+id/EditarProductoFragment"
+        android:name="com.example.proyectonativas.fragments.EditarProductoFragment"
+        app:defaultNavHost="true" />
+
+    <fragment
+        android:id="@+id/productoFragment"
+        android:name="com.example.proyectonativas.fragments.ProductoFragment"
+        app:defaultNavHost="true" />
+
+
+    <fragment
+        android:id="@+id/favoritoFragment"
         android:name="com.example.proyectonativas.fragments.FavoritoFragment"
-        app:defaultNavHost="true"/>
+        app:defaultNavHost="true" />
 
-    <fragment android:id="@+id/TiendasFragment"
+    <fragment
+        android:id="@+id/TiendasFragment"
         android:name="com.example.proyectonativas.fragments.TiendasFragment"
-        app:defaultNavHost="true"/>
+        app:defaultNavHost="true" />
 
-    <fragment android:id="@+id/EditarPerfilFragment"
+    <fragment
+        android:id="@+id/EditarPerfilFragment"
         android:name="com.example.proyectonativas.fragments.EditInfoFragment"
-        app:defaultNavHost="true"/>
+        app:defaultNavHost="true" />
 
-    <fragment android:id="@+id/MiPerfilFragment"
+    <fragment
+        android:id="@+id/MiPerfilFragment"
         android:name="com.example.proyectonativas.fragments.PerfilFragment"
-        app:defaultNavHost="true"/>
-
-
-
-
+        app:defaultNavHost="true" />
 
 
 </navigation>

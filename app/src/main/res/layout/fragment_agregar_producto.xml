@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/vwSuperior"
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/gris"
@@ -22,28 +22,28 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_agregarProducto"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:background="@drawable/degradado_producto_gris"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/vwSuperior"
             app:srcCompat="@drawable/anadir_icono"
             tools:ignore="MissingConstraints" />
 
         <View
-            android:id="@+id/view2"
+            android:id="@+id/vwInferior"
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/gris"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agregarProducto"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="0dp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/et_nombreAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,25 +51,24 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:autofillHints=""
-            android:contentDescription="@string/app_name"
             android:ems="10"
             android:fontFamily="@font/playfair_display_bold"
-            android:hint="@string/cantidad"
-            android:textColorHint="@color/gris"
+            android:hint="@string/nombretitle"
             android:inputType="text"
             android:padding="7dp"
             android:textAlignment="center"
             android:textColor="@color/blanco"
+            android:textColorHint="@color/gris"
             android:textSize="29sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agregarProducto"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText1"
+            android:id="@+id/et_precioAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,11 +87,11 @@
             android:textSize="29sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText"
+            app:layout_constraintTop_toBottomOf="@+id/et_nombreAgregarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/et_categoriaAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,11 +111,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText1"
+            app:layout_constraintTop_toBottomOf="@+id/et_precioAgregarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/et_cantidadAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -136,11 +135,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+            app:layout_constraintTop_toBottomOf="@+id/et_categoriaAgregarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/et_descripcionAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -160,11 +159,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+            app:layout_constraintTop_toBottomOf="@+id/et_cantidadAgregarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/et_descuentoAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -185,7 +184,7 @@
             app:layout_constraintEnd_toEndOf="@id/linearBotones"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText4"
+            app:layout_constraintTop_toBottomOf="@+id/et_descripcionAgregarPro"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
@@ -200,12 +199,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5"
+            app:layout_constraintTop_toBottomOf="@+id/et_descuentoAgregarPro"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints,UselessLeaf">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/bt_crearProducto"
                 style="@style/botonFondoDorado"
                 android:layout_width="140dp"
                 android:layout_height="55dp"
@@ -217,7 +216,7 @@
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/bt_cancelarAgregarP"
                 style="@style/botonFondoDorado"
                 android:layout_width="140dp"
                 android:layout_height="55dp"

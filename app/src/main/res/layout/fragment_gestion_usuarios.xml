@@ -12,12 +12,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_nombreCategoria"
+            android:id="@+id/tv_gestionUsuariosTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="@string/pedidos"
+            android:text="@string/usuariosGrafica"
             android:textAlignment="textStart"
             android:textColor="@color/blanco"
             android:textSize="30sp" />
@@ -32,6 +32,7 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/tv_tituloIDGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/id"
@@ -41,6 +42,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_tituloNombreGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/nombre"
@@ -50,6 +52,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_tituloRolGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/rol"
@@ -59,6 +62,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_tituloEstadoGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/estado"
@@ -77,6 +81,7 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/tv_idPrimerGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/idPedidoEj"
@@ -85,6 +90,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/tv_nombrePrimerGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/nombreUsuarioEJ"
@@ -93,6 +99,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/tv_rolPrimerGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/rolUsuarioEJ"
@@ -101,6 +108,7 @@
                     android:textSize="15sp" />
 
                 <TextView
+                    android:id="@+id/tv_estadoPrimerGestionUsu"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/estadoUsuarioEJ"

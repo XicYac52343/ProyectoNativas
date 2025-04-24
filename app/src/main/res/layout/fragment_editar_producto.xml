@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/vwSuperior"
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/gris"
@@ -22,21 +22,21 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/iv_agregarProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/degradado_producto"
-            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintBottom_toTopOf="@+id/vwInferior"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/vwSuperior"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/fragancia_urbe"
             tools:ignore="MissingConstraints" />
 
         <View
-            android:id="@+id/view2"
+            android:id="@+id/vwInferior"
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:background="@color/gris"
@@ -45,7 +45,7 @@
             tools:layout_editor_absoluteY="442dp" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/et_nombreEditarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,12 +64,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agregarProducto"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText1"
+            android:id="@+id/et_precioEditarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -87,11 +87,11 @@
             android:textSize="29sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText"
+            app:layout_constraintTop_toBottomOf="@+id/et_nombreEditarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/et_categoriaEditarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,11 +110,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText1"
+            app:layout_constraintTop_toBottomOf="@+id/et_precioEditarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/et_cantidadEditarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -133,11 +133,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+            app:layout_constraintTop_toBottomOf="@+id/et_categoriaEditarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/et_descripcionEditarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -156,11 +156,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.50"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText3"
+            app:layout_constraintTop_toBottomOf="@+id/et_cantidadEditarPro"
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/et_descuentoAgregarPro"
             style="@style/etBordeDorado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -178,9 +178,9 @@
             android:textSize="29sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/linearBotones"
-            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText4"
+            app:layout_constraintTop_toBottomOf="@+id/et_descripcionEditarPro"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
 
@@ -195,12 +195,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText5"
+            app:layout_constraintTop_toBottomOf="@+id/et_descuentoAgregarPro"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints,UselessLeaf">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/bt_guardarCambioProducto"
                 style="@style/botonFondoDorado"
                 android:layout_width="140dp"
                 android:layout_height="55dp"
@@ -212,7 +212,7 @@
                 app:backgroundTint="@null" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/bt_cancelarambioProducto"
                 style="@style/botonFondoDorado"
                 android:layout_width="140dp"
                 android:layout_height="55dp"

@@ -18,7 +18,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tv_nombreCategoria"
+                android:id="@+id/tv_categoriasTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -42,7 +42,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_primerProductoCategorias"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -81,7 +81,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombrePrimerProductoCategorias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -91,7 +91,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioPrimerProductoCategorias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -102,7 +102,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarPrimerProducto"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -122,7 +122,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_segundoProductoCategorias"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -161,7 +161,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreSegundoProductoCategorias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -171,7 +171,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioSegundoProductoCategorias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -182,7 +182,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarSegundoProducto"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -209,7 +209,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_tercerProductoCategorias"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -248,7 +248,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreTercerProductoCategorias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -258,7 +258,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioTercerProductoCategorias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -269,7 +269,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarTercerProducto"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -289,7 +289,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/iv_cuartoProductoCategorias"
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:layout_margin="10dp"
@@ -328,7 +328,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/tv_nombreCuartoProductoCategorias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
@@ -338,7 +338,7 @@
                     android:textSize="25sp" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tv_precioCuartoProductoCategorias"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-11dp"
@@ -349,7 +349,7 @@
                     android:textSize="30sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bt_agregarCuartoProducto"
                     style="@style/botonFondoDorado"
                     android:layout_width="125dp"
                     android:layout_height="55dp"
@@ -359,7 +359,6 @@
                     android:text="@string/añadir"
                     android:textSize="28dp"
                     app:backgroundTint="@null" />
-
             </LinearLayout>
 
         </LinearLayout>

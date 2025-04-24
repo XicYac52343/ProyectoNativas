@@ -37,25 +37,31 @@
         <item name="android:fontFamily">@font/playfair_display_bold</item>
     </style>
 
-    <!-- Botones de producto (+/-) -->
-    <style name="btnprod" parent="@android:style/Widget.Button">
-        <item name="android:background">@drawable/btnproduct</item>
-        <item name="android:insetLeft">0dp</item>
-        <item name="android:insetRight">0dp</item>
-        <item name="android:padding">0dp</item>
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">48dp</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:fontFamily">@font/playfair_display_bold</item>
-        <item name="android:textColor">@color/negro</item>
-
-    </style>
 
     <!-- Botón de favorito as ImageButton -->
     <style name="btnfav" parent="@android:style/Widget.ImageButton">
         <item name="android:background">@drawable/sytileinput</item>
         <item name="android:tint">@color/dorado</item>
         <item name="android:padding">8dp</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+    --Degradado Producto
+    <style name="degradadoFondo" parent="Base.CardView">
+        <item name="android:background">@drawable/degradado_producto</item>
+    </style>
+
+    --Diseño Botón Agregar
+    <style name="botonFondoDorado" parent="android:style/Widget.Button">
+        <item name="android:background">@drawable/disenio_boton_agregar</item>"
     </style>
 
     --Diseño Botón Cerrar Sesión

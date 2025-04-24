@@ -23,23 +23,23 @@ class FavoritoFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_favoritos, container, false)
 
-            mas=view.findViewById(R.id.btnaume)
+        mas = view.findViewById(R.id.btnaume)
         mas.setOnClickListener {
             actualizarNumeromas()
         }
-            menos=view.findViewById(R.id.btndism)
+        menos = view.findViewById(R.id.btndism)
         menos.setOnClickListener {
             actualizarNumeromenos()
 
         }
-            numero=view.findViewById(R.id.cantidadinicial)
+        numero = view.findViewById(R.id.cantidadinicial)
 
 
-            return view
+        return view
     }
 
     private fun actualizarNumeromas() {
-       val cantidadactualida = numero.text.toString().toInt()
+        val cantidadactualida = numero.text.toString().toInt()
         numero.text = (cantidadactualida + 1).toString()
 
     }
@@ -48,8 +48,9 @@ class FavoritoFragment : Fragment() {
         if (numero.text.toString().toInt() > 0) {
             val cantidadactualida = numero.text.toString().toInt()
             numero.text = (cantidadactualida - 1).toString()
-        }else  {
-            Toast.makeText(requireContext(), "No se puede decrementar más", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "No se puede decrementar más", Toast.LENGTH_SHORT)
+                .show()
         }
 
     }
