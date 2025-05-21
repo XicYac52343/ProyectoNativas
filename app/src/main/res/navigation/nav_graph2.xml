@@ -131,5 +131,10 @@
         android:name="com.example.proyectonativas.fragments.PerfilFragment"
         app:defaultNavHost="true" />
 
+    <fragment
+        android:id="@+id/historialPedidosFragment"
+        android:name="com.example.proyectonativas.fragments.HistorialPedidosFragment"
+        app:defaultNavHost="true" />
+
 
 </navigation>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectonativas.R
@@ -17,6 +18,7 @@ class carritoAdapter(private val items:List<Item>):
             val tv_precioUniPrimerProductoCarrito = view.findViewById<TextView>(R.id.tv_precioUniPrimerProductoCarrito)
             val tv_cantidadPrimerProCarrito = view.findViewById<TextView>(R.id.tv_cantidadPrimerProCarrito)
             val tv_totalPrimerProCarrito = view.findViewById<TextView>(R.id.tv_totalPrimerProCarrito)
+            val iv_primerProductoCarrito = view.findViewById<ImageView>(R.id.iv_primerProductoCarrito)
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): carritoAdapter.ViewHolder {
@@ -31,8 +33,9 @@ class carritoAdapter(private val items:List<Item>):
         holder.tv_precioUniPrimerProductoCarrito.text = "$"+item.producto.precio.toString()
         holder.tv_cantidadPrimerProCarrito.text = item.cantidad.toString()
         holder.tv_totalPrimerProCarrito.text = "$"+(item.cantidad * item.producto.precio).toString().trim()
+        val nombreImagen = item.producto.nombreImagen
+        val imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen, "drawable", holder.itemView.context.packageName)
+        holder.iv_primerProductoCarrito.setImageResource(imageResId)
     }
-
     override fun getItemCount() = items.size
-
 }

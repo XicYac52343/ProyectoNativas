@@ -24,7 +24,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Callback
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectonativas.modelos.Item
 import com.example.proyectonativas.modelos.Pedido
+import com.example.proyectonativas.servicios.ItemService
 import com.example.proyectonativas.servicios.PedidoService
 
 class CarritoFragment : Fragment() {
@@ -39,9 +41,10 @@ class CarritoFragment : Fragment() {
     private lateinit var tv_totalPrimerProCarrito : TextView
     private lateinit var tv_totalCarrito : TextView
     private lateinit var tv_vacioCarrito : TextView
-    private lateinit var call : Call<Carrito>
+    private lateinit var call : Call<List<Item>>
     private lateinit var bt_comprarCarrito : Button
-    private lateinit var carrito : Carrito
+    private lateinit var items : List<Item>
+    private var totalCarrito = 0.0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -98,42 +101,45 @@ class CarritoFragment : Fragment() {
     private fun getItems(){
         val sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
         val usuarioIniciado = sharedPreferences.getInt("usuarioIniciado", 0)
+        totalCarrito = 0.0
 
         val retrofit = Retrofit.Builder()
             .baseUrl(Constantes.baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        val carritoService = retrofit.create(CarritoService::class.java)
+        val itemService = retrofit.create(ItemService::class.java)
 
-        call = carritoService.getCarritoByUsuario(usuarioIniciado)
+        call = itemService.getItemsByUsuario(usuarioIniciado)
 
-        call.enqueue(object : Callback<Carrito> {
-            override fun onResponse(call: Call<Carrito>, response: Response<Carrito>){
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(call: Call<List<Item>>, response: Response<List<Item>>){
                 if(response.isSuccessful && response.body() != null){
                     //Los !! sirve para decir que nunca va a ser nulo ese dato
-                    carrito = response.body()!!
-                    if(carrito != null){
-                        if(!carrito.item.isEmpty()){
+                    items = response.body()!!
+                    if(items != null){
+                        if(!items.isEmpty()){
                             tv_vacioCarrito.visibility = View.GONE
                         }else{
+                            for(item in items){
+                                totalCarrito = totalCarrito + (item.producto.precio * item.cantidad)
+                            }
                             tv_vacioCarrito.visibility = View.VISIBLE
                         }
-                        tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + carrito.totalCarrito
-                        rv_productoCarrito.adapter = carritoAdapter(carrito.item)
+                        tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
+                        rv_productoCarrito.adapter = carritoAdapter(items)
                     }
                 }else{
                     Log.e("Error", "Codigo de error: ${response.code()}")
                 }
             }
-            override fun onFailure(call : Call<Carrito>, t: Throwable){
+            override fun onFailure(call : Call<List<Item>>, t: Throwable){
                 Log.e("Error", "Error en la obtencion del carrito: ${t.message}")
             }
         })
     }
 
     private fun validarStock(): Boolean {
-        var carritoItems = carrito.item
-        for(item in carritoItems){
+        for(item in items){
             if(item.cantidad > item.producto.stock){
                 Toast.makeText(requireContext(), "No hay suficiente stock de ${item.producto.nombre}, solo hay ${item.producto.stock}", Toast.LENGTH_SHORT).show()
                 return false
@@ -158,7 +164,7 @@ class CarritoFragment : Fragment() {
             override fun onResponse(call : Call<Pedido>, response : Response<Pedido>){
                 if(response.isSuccessful && response.body() !=null){
                     rv_productoCarrito.adapter = carritoAdapter(emptyList())
-                    tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + carrito.totalCarrito
+                    tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
                     tv_vacioCarrito.visibility = View.VISIBLE
                 }else{
                     Log.e("Error", "Codigo de error: ${response.code()}")

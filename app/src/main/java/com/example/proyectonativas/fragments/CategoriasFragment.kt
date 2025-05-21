@@ -1,5 +1,6 @@
 package com.example.proyectonativas.fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -14,8 +17,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectonativas.Constantes
 import com.example.proyectonativas.R
 import com.example.proyectonativas.adapters.productosAdapter
+import com.example.proyectonativas.modelos.Item
 import com.example.proyectonativas.modelos.Producto
 import com.example.proyectonativas.modelos.Usuario
+import com.example.proyectonativas.servicios.ItemService
 import com.example.proyectonativas.servicios.ProductoService
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
@@ -29,6 +34,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class CategoriasFragment : Fragment(), productosAdapter.imagenProductoListener{
 
     private lateinit var rv_productosCategoria : RecyclerView
+    private lateinit var SharedPreferences : SharedPreferences
+    private var usuarioIniciado : Int = 0
     private lateinit var call : Call<List<Producto>>
 
     override fun onCreateView(
@@ -37,7 +44,8 @@ class CategoriasFragment : Fragment(), productosAdapter.imagenProductoListener{
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_categorias, container, false)
-
+        SharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
+        usuarioIniciado = SharedPreferences.getInt("usuarioIniciado", 0)
         rv_productosCategoria = view.findViewById(R.id.rv_productosCategoria)
 
         getProductos()
@@ -97,6 +105,42 @@ class CategoriasFragment : Fragment(), productosAdapter.imagenProductoListener{
         val bundle = Bundle()
         bundle.putInt("productoID", producto.id)
         findNavController().navigate(R.id.action_categoriaAProducto, bundle)
+    }
+
+    override fun agregarItemCarrito(producto: Producto){
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constantes.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val itemService = retrofit.create(ItemService::class.java)
+
+        val nuevoItem = Item()
+        nuevoItem.setProducto(producto)
+        nuevoItem.setCantidad(1)
+
+        val call = itemService.crearItem(usuarioIniciado, nuevoItem)
+
+        call.enqueue(object : Callback<Item> {
+            //Si la solicitud fue exitosa se ejecuta esta funcion
+            //Este metodo recibe dos parametros, la llamada o solicitud que se le hizo
+            //Y la respuesta que tuvimosd desde la API
+            override fun onResponse(call: Call<Item>, response: Response<Item>) {
+                //Si la respuesta viene con un codigo de exito se ejecuta el iff
+                if (response.isSuccessful && response.body() != null) {
+                    Log.e("Item", "Item Creado Exitosamente")
+                    Toast.makeText(
+                        requireContext(),
+                        "Agregado Exitosamente",
+                        Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("Error", "Error En la respuesta: ${response.code()}")
+                }
+            }
+            override fun onFailure(call: Call<Item>, t: Throwable) {
+                Log.e("Error", "Error en la solicitud: ${t.message}")
+            }
+        })
     }
 
     private fun cancelarCallEnqueu(){

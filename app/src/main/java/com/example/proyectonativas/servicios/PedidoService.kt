@@ -12,4 +12,7 @@ interface PedidoService {
 
     @GET("api/pedidos")
     fun getPedidos() : Call<List<Pedido>>
+
+    @GET("api/pedidos")
+    fun getPedidosByUsuario(@Query("usuarioID") usuarioID : Int): Call<List<Pedido>>
 }

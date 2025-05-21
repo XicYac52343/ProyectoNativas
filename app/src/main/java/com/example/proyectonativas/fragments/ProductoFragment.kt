@@ -41,6 +41,7 @@ class ProductoFragment : Fragment() {
     private lateinit var tv_descripcionProductoDetalles : TextView
     private lateinit var tv_estilo1ProductoDetalles : TextView
     private lateinit var iv_favProductoDetalles : ImageView
+    private lateinit var iv_productoDetalles : ImageView
     private var cantidadProducto : Int = 0
     private var productoGuardado: Producto? = null
     private var usuarioIniciado : Int = 0
@@ -58,6 +59,7 @@ class ProductoFragment : Fragment() {
         usuarioIniciado = sharedPreferences.getInt("usuarioIniciado", 0)
         Log.d("usuarioIniciado", "usuarioIniciado: $usuarioIniciado")
         iv_favProductoDetalles = view.findViewById(R.id.iv_favProductoDetalles)
+        iv_productoDetalles = view.findViewById(R.id.iv_productoDetalles)
 
         bt_añadirProductoDetalles = view.findViewById(R.id.bt_añadirProductoDetalles)
         tv_nombreProductoDetalles = view.findViewById(R.id.tv_nombreProductoDetalles)
@@ -222,6 +224,9 @@ class ProductoFragment : Fragment() {
                     tv_descripcionProductoDetalles.text = producto?.descripcion
                     tv_estilo1ProductoDetalles.text = producto?.categoria
                     cantidadProducto = producto?.stock.toString().toInt()
+                    val nombreImagen = producto?.nombreImagen
+                    val imageResId = context?.resources?.getIdentifier(nombreImagen, "drawable", context?.packageName)
+                    iv_productoDetalles.setImageResource(imageResId!!)
                     productoGuardado = producto
 
                 } else {

@@ -23,4 +23,7 @@ interface UsuarioService {
 
     @PUT("api/usuario/productoID")
     fun actualizarUsuario(@Query("productoID") productoID: Int, @Body usuario: Usuario): Call<Usuario>
+
+    @PUT("api/usuario/userAndroid")
+    fun actualizarUsuarioAndroid(@Body usuario: Usuario): Call<Usuario>
 }

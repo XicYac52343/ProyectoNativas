@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/negro">
 
     <LinearLayout
@@ -78,46 +79,13 @@
                 android:background="@color/blanco"
                 android:layout_marginVertical="4dp" />
 
-            <TableRow>
-
-                <TextView
-                    android:id="@+id/tv_idPrimerGestionUsu"
-                    android:fontFamily="@font/libre_baskerville_bold"
-                    android:padding="8dp"
-                    android:text="@string/idPedidoEj"
-                    android:textAlignment="center"
-                    android:textColor="@color/dorado"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_nombrePrimerGestionUsu"
-                    android:fontFamily="@font/libre_baskerville_bold"
-                    android:padding="8dp"
-                    android:text="@string/nombreUsuarioEJ"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanco"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_rolPrimerGestionUsu"
-                    android:fontFamily="@font/libre_baskerville_bold"
-                    android:padding="8dp"
-                    android:text="@string/rolUsuarioEJ"
-                    android:textAlignment="center"
-                    android:textColor="@color/blanco"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tv_estadoPrimerGestionUsu"
-                    android:fontFamily="@font/libre_baskerville_bold"
-                    android:padding="8dp"
-                    android:text="@string/estadoUsuarioEJ"
-                    android:textAlignment="center"
-                    android:textColor="@color/dorado"
-                    android:textSize="15sp" />
-            </TableRow>
-
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_usuariosAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="1"
+                android:textAlignment="center"/>
 
         </TableLayout>
 

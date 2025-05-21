@@ -136,11 +136,15 @@
             android:fontFamily="@font/playfair_display_bold"
             />
 
-
-
-
-
-
-
+        <Button
+            android:id="@+id/bt_historialPedidos"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pedidos"
+            app:backgroundTint="@color/negro"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"
+            />
     </LinearLayout>
 </ScrollView>

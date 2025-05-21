@@ -8,4 +8,6 @@ import retrofit2.http.Query
 interface CarritoService {
     @GET("api/carrito/usuarioID")
     fun getCarritoByUsuario(@Query("id") id: Int): Call<Carrito>
+
+
 }

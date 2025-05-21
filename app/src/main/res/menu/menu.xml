@@ -4,11 +4,11 @@
 
         <item
             android:id="@+id/productosFragment"
-            android:title="@string/productosMenu" />
+            android:title="@string/inicioMenu" />
 
         <item
             android:id="@+id/categoriasFragment"
-            android:title="@string/categoriaMenu" />
+            android:title="@string/productosMenu" />
 
         <item
             android:id="@+id/favoritoFragment"

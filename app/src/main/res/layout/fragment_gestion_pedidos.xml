@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/negro"
-            android:padding="10dp"
+            android:padding="5dp"
             android:stretchColumns="*">
 
             <TableRow>
@@ -44,6 +44,7 @@
 
                 <TextView
                     android:id="@+id/tv_tituloEstadoPeGestionPe"
+                    android:layout_width="wrap_content"
                     android:fontFamily="@font/libre_baskerville_bold"
                     android:padding="8dp"
                     android:text="@string/estadoPedido"
@@ -83,10 +84,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_pedidosAdmin"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="1"/>
+                app:spanCount="1"
+                android:textAlignment="center"/>
 
         </TableLayout>
 

@@ -137,5 +137,6 @@
             android:textColor="@color/dorado"
             android:fontFamily="@font/playfair_display_bold"
             />
+
     </LinearLayout>
 </ScrollView>

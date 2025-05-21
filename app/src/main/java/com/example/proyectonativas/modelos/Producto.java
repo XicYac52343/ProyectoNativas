@@ -11,13 +11,15 @@ public class Producto {
     private float precio;
     private int cantidadDescuento;
 
-    private List<Usuario> usuariosFavoritos;    
+    private List<Usuario> usuariosFavoritos;
+
+    private String nombreImagen;
 
     public Producto(){
 
     }
 
-    public Producto(String nombre, String categoria, String descripcion, int stock, float precio, int cantidadDescuento, List<Usuario> usuariosFavoritos) {
+    public Producto(String nombre, String categoria, String descripcion, int stock, float precio, int cantidadDescuento, List<Usuario> usuariosFavoritos, String nombreImagen) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.descripcion = descripcion;
@@ -25,6 +27,7 @@ public class Producto {
         this.precio = precio;
         this.cantidadDescuento = cantidadDescuento;
         this.usuariosFavoritos = usuariosFavoritos;
+        this.nombreImagen = nombreImagen;
     }
 
     public Integer getId() {
@@ -89,5 +92,13 @@ public class Producto {
 
     public void setUsuariosFavoritos(List<Usuario> usuariosFavoritos) {
         this.usuariosFavoritos = usuariosFavoritos;
+    }
+
+    public String getNombreImagen() {
+        return nombreImagen;
+    }
+
+    public void setNombreImagen(String nombreImagen) {
+        this.nombreImagen = nombreImagen;
     }
 }
