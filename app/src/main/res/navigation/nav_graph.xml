@@ -12,6 +12,10 @@
         android:id="@+id/registro"
         android:name="com.example.proyectonativas.fragments.RegistroFragment"
         app:defaultNavHost="true"/>
+    <fragment
+        android:id="@+id/registro_google"
+        android:name="com.example.proyectonativas.fragments.RegistroGoogleFragment"
+        app:defaultNavHost="true"/>
 
     <fragment android:id="@+id/RecuperarFragment"
         android:name="com.example.proyectonativas.fragments.RecuperarcontraFragment"

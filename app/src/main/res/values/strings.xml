@@ -142,6 +142,9 @@
     <string name="labelcorreoRecu">introduzca su correo electronico</string>
     <string name="btnrecuperar">Recuperar Contrasela</string>
     <string name="LinkRecuperarContra">Olvidé mi contraseña</string>
-    <string name="inicioMenu">Inicio</string>
 
+    <string name="ubicacion_tienda_1">Tienda Aroma frescos</string>
+    <string name="ubicacion_tienda_2">Tienda Olores citricos</string>
+    <string name="registrotitleGoogle">Terminar resgitro \n- Google</string>
+    <string name="inicioMenu">Inicio</string>
 </resources>

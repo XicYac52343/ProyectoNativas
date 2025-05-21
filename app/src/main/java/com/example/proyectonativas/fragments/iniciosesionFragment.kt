@@ -1,5 +1,6 @@
 package com.example.proyectonativas.fragments
 
+import android.app.ComponentCaller
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -12,11 +13,18 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultCaller
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import com.example.proyectonativas.Constantes
 import com.example.proyectonativas.MainActivity
 import com.example.proyectonativas.R
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.example.proyectonativas.adapters.productosAdapter
 import com.example.proyectonativas.modelos.Producto
 import com.example.proyectonativas.modelos.Usuario
@@ -39,6 +47,13 @@ class iniciosesionFragment : Fragment() {
     private lateinit var Linkregistrarse: TextView
     private lateinit var call : Call<List<Usuario>>
     private lateinit var usuarioService : UsuarioService
+    private lateinit var btngoogle: Button
+    private lateinit var mGoogleSingInClient : GoogleSignInClient
+    private val RC_SING_IN = 1234
+    private val TAG ="INICIO EXITOSO CON GOOGLE"
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,6 +61,20 @@ class iniciosesionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_iniciosesion, container, false)
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .requestProfile()
+            .build()
+
+
+        mGoogleSingInClient = GoogleSignIn.getClient(requireContext(), gso)
+
+        btngoogle = view.findViewById(R.id.btngoogle)
+        btngoogle.setOnClickListener {
+            SingIn()
+        }
+
         sharedPreference = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
         getUsuarios()
         getTextCorreo = sharedPreference.getString("correo", "Useremail") ?: "Useremail";
@@ -73,7 +102,50 @@ class iniciosesionFragment : Fragment() {
 
         return view
     }
+    private fun SingIn(){
+        val singInIntent = mGoogleSingInClient.signInIntent
+        startActivityForResult(singInIntent, RC_SING_IN)
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == RC_SING_IN){
+            val task =GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSingInResult(task)
+        }
+    }
+
+    private fun handleSingInResult (completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+            Log.d(TAG, "Inicio de sesión exitoso: ${account.email}")
+            val nombre= account.givenName
+            val apellido= account.familyName
+
+            // Guardar datos básicos en SharedPreferences
+            val editor = sharedPreference.edit()
+            editor.putString("nombres", nombre.toString().trim())
+            editor.putString("apellidos", apellido.toString().trim())
+            editor.putString("correo", account.email)
+
+            // Verificar si es la primera vez
+            val primeraVez = sharedPreference.getBoolean("esPrimeraVezGoogle", true)
+
+            if (primeraVez) {
+                editor.putBoolean("esPrimeraVezGoogle", false)
+                editor.apply()
+                Toast.makeText(requireContext(), "Bienvenido a VentFort, ${account.givenName}", Toast.LENGTH_SHORT).show()
+                findNavController(this).navigate(R.id.registro_google)
+            } else {
+                editor.apply()
+                main()
+            }
+
+        } catch (e: ApiException) {
+            Log.e(TAG, "Error en el inicio de sesión con Google", e)
+            Toast.makeText(requireContext(), "Error en el inicio de sesión con Google", Toast.LENGTH_SHORT).show()
+        }
+    }
     private fun iniciarSesion() {
         val correoIngresado = Acorreo.text.toString().trim()
         val contrasenaIngresado = Acontrasena.text.toString().trim()
