@@ -15,7 +15,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import com.example.proyectonativas.Constantes
 import com.example.proyectonativas.R
+import com.example.proyectonativas.adapters.productosAdapter
+import com.example.proyectonativas.modelos.Producto
+import com.example.proyectonativas.modelos.Usuario
+import retrofit2.Retrofit
+import com.example.proyectonativas.servicios.UsuarioService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RegistroFragment : Fragment() {
     private lateinit var sharedPreference: SharedPreferences
@@ -104,6 +114,40 @@ class RegistroFragment : Fragment() {
 
     private fun GuardarDatos(){
         val editor = sharedPreference.edit()
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constantes.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val usuarioService = retrofit.create(UsuarioService::class.java)
+
+        val nuevoUsuario = Usuario()
+        nuevoUsuario.setNombre(editTextNombres.text.toString().trim())
+        nuevoUsuario.setApellido(editTextApellido.text.toString().trim())
+        nuevoUsuario.setCorreo(editTextCorreo.text.toString().trim())
+        nuevoUsuario.setTelefono(editTextTelefono.text.toString().trim())
+        nuevoUsuario.setContrasenia(editTextContrasena.text.toString().trim())
+
+
+        val call = usuarioService.crearUsuario(nuevoUsuario)
+
+        call.enqueue(object : Callback<Usuario> {
+            //Si la solicitud fue exitosa se ejecuta esta funcion
+            //Este metodo recibe dos parametros, la llamada o solicitud que se le hizo
+            //Y la respuesta que tuvimosd desde la API
+            override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                //Si la respuesta viene con un codigo de exito se ejecuta el iff
+                if (response.isSuccessful && response.body() != null) {
+                    Log.e("Usuario", "Usuario creado exitosamente")
+                } else {
+                    Log.e("Error", "Error En la respuesta: ${response.code()}")
+                }
+            }
+            override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                Log.e("Error", "Error en la solicitud: ${t.message}")
+            }
+        })
 
         editor.putString("nombres",editTextNombres.text.toString().trim())
         editor.putString("apellidos",editTextApellido.text.toString().trim())

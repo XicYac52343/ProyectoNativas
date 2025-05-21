@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/negro">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/productosrecycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="@color/negro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            style="@style/Edittex">
+
+            <!-- Imagen del producto -->
+            <ImageView
+                style="@style/Edittex"
+                android:id="@+id/imagenProducto"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                android:contentDescription="@string/nombreProducto" />
+
+            <!-- Sección de texto -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- Nombre y categoría en horizontal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/nombreProductoFavorito"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nombreProducto"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/dorado"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/categoriaproductoFavorito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/categoriaExclusivos"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:textColor="@color/dorado"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Precio a la izquierda y Stock a la derecha -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp">
+
+                    <!-- Grupo Precio -->
+                    <LinearLayout
+                        android:id="@+id/priceGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:id="@+id/preciotext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/preciotext"
+                            android:fontFamily="@font/playfair_display_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/precioProductoFavorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="@string/precioProducto"
+                            android:fontFamily="@font/playfair_display_bold"
+                            android:textColor="@color/blanco"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <!-- Grupo Stock -->
+                    <LinearLayout
+                        android:id="@+id/stockGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:id="@+id/cantidadStockFavorito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cantidadstock"
+                            android:fontFamily="@font/playfair_display_bold"
+                            android:textColor="@color/dorado"
+                            android:textSize="20sp" />
+
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!-- Título cantidad -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cantidad_text"
+                    android:fontFamily="@font/playfair_display_bold"
+                    android:textColor="@color/dorado"
+                    android:textSize="20sp"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Botones + y - con valor centrado -->
+
+                <!-- Favorito alineado al inicio -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/btnfav"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        app:srcCompat="@drawable/corazon" />
+
+                    <TextView
+                        android:id="@+id/textfavo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/playfair_display_bold"
+                        android:text="@string/textfav"
+                        android:textColor="@color/dorado"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

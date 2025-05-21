@@ -108,8 +108,9 @@
         android:id="@+id/productoFragment"
         android:name="com.example.proyectonativas.fragments.ProductoFragment"
         app:defaultNavHost="true" />
-
-
+        <argument
+            android:name="productoID"
+            app:argType="integer" />
     <fragment
         android:id="@+id/favoritoFragment"
         android:name="com.example.proyectonativas.fragments.FavoritoFragment"
