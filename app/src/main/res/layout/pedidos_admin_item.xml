@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/negro">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_idPrimerGestionPedi"
+            android:fontFamily="@font/libre_baskerville_bold"
+            android:padding="8dp"
+            android:text="@string/idPedidoEj"
+            android:textAlignment="center"
+            android:textColor="@color/dorado"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_estadoPrimerGestionPedi"
+            android:fontFamily="@font/libre_baskerville_bold"
+            android:padding="8dp"
+            android:text="@string/estadoPedidoEj"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_fechaPrimerGestionPedi"
+            android:fontFamily="@font/libre_baskerville_bold"
+            android:padding="8dp"
+            android:text="@string/fechaPedidoEj"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_montoPrimerGestionPedi"
+            android:fontFamily="@font/libre_baskerville_bold"
+            android:padding="8dp"
+            android:text="@string/precioProducto"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="15sp" />
+
+    </TableRow>
+
+</LinearLayout>

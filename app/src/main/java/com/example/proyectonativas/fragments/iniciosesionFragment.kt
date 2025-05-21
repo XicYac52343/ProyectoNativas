@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +14,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import com.example.proyectonativas.Constantes
 import com.example.proyectonativas.MainActivity
 import com.example.proyectonativas.R
+import com.example.proyectonativas.adapters.productosAdapter
+import com.example.proyectonativas.modelos.Producto
+import com.example.proyectonativas.modelos.Usuario
+import com.example.proyectonativas.servicios.UsuarioService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class iniciosesionFragment : Fragment() {
 
@@ -26,6 +37,8 @@ class iniciosesionFragment : Fragment() {
     private lateinit var Acorreo: EditText
     private lateinit var Acontrasena: EditText
     private lateinit var Linkregistrarse: TextView
+    private lateinit var call : Call<List<Usuario>>
+    private lateinit var usuarioService : UsuarioService
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +47,7 @@ class iniciosesionFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_iniciosesion, container, false)
         sharedPreference = requireContext().getSharedPreferences("UserData", Context.MODE_PRIVATE)
-
+        getUsuarios()
         getTextCorreo = sharedPreference.getString("correo", "Useremail") ?: "Useremail";
 
         getTextContrasena =
@@ -64,24 +77,51 @@ class iniciosesionFragment : Fragment() {
     private fun iniciarSesion() {
         val correoIngresado = Acorreo.text.toString().trim()
         val contrasenaIngresado = Acontrasena.text.toString().trim()
+        var inicioSesion = false;
 
-        if (correoIngresado == getTextCorreo && contrasenaIngresado == getTextContrasena || correoIngresado == "admin" && contrasenaIngresado == "admin") {
-            // Login exitoso
+        call = usuarioService.getUsuarios()
 
-            if(correoIngresado == "admin" && contrasenaIngresado == "admin"){
-                val editor = sharedPreference.edit()
-                editor.putString("rol", "admin")
-                editor.apply()
+        call.enqueue(object : Callback<List<Usuario>> {
+            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
+                //Si la respuesta viene con un codigo de exito se ejecuta el iff
+                if (response.isSuccessful && response.body() != null) {
+                    val usuarios = response.body()
+
+                    if (!usuarios.isNullOrEmpty()) {
+                        for (usuario in usuarios) {
+                            if (correoIngresado == usuario.correo && contrasenaIngresado == usuario.contrasenia || correoIngresado == "admin" && contrasenaIngresado == "admin") {
+                                // Login exitoso
+                                val editor = sharedPreference.edit()
+                                editor.putInt("usuarioIniciado", usuario.id)
+                                if(correoIngresado == "admin" && contrasenaIngresado == "admin"){
+                                    editor.putString("rol", "admin")
+                                }
+                                editor.apply()
+                                inicioSesion = true;
+                                Toast.makeText(requireContext(), "Login exitoso", Toast.LENGTH_SHORT).show()
+                                //Cambio al MainActivity
+                                cancelarCallEnqueu();
+                                main()
+                                break;
+                            }
+                        }
+                        if(inicioSesion == false){
+                            Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+                    } else {
+                        Log.e("Error", "La lista de usuarios está vacía o es null")
+                    }
+                } else {
+                    Log.e("Error", "Código de error: ${response.code()}")
+                }
             }
+            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
+                Log.e("Error", "Error en la solicitud: ${t.message}")
+            }
+        })
 
-            Toast.makeText(requireContext(), "Login exitoso", Toast.LENGTH_SHORT).show()
-            main()
 
-        } else {
-            // Login fallido
-            Toast.makeText(requireContext(), "Correo o contraseña incorrectos", Toast.LENGTH_SHORT)
-                .show()
-        }
     }
 
     private fun main() {
@@ -90,5 +130,45 @@ class iniciosesionFragment : Fragment() {
         requireActivity().finish()
     }
 
+    private fun getUsuarios(){
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constantes.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        usuarioService = retrofit.create(UsuarioService::class.java)
+    }
+
+    private fun cancelarCallEnqueu(){
+        if(::call.isInitialized){
+            call.cancel()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cancelarCallEnqueu()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Profile Activity", "onStart: Va a ser visible el activity de Sesion")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Profile Activity", "onResume: Va a estar en primer plano el activity de Sesion")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Profile Activity", "onPause: Va a estar en pausa el activity de Iniciar Sesion")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        cancelarCallEnqueu()
+        Log.d("Profile Activity", "onStop: Va a detenerse porque no es visible el activity de Sesion")
+    }
 
 }
