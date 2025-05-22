@@ -13,9 +13,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity.MODE_PRIVATE
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.proyectonativas.Constantes
 import com.example.proyectonativas.R
+import com.example.proyectonativas.adapters.carritoAdapter
 import com.example.proyectonativas.adapters.productosOfertasAdapter
 import com.example.proyectonativas.modelos.Item
 import com.example.proyectonativas.modelos.Producto
@@ -42,6 +44,8 @@ class ProductoFragment : Fragment() {
     private lateinit var tv_estilo1ProductoDetalles : TextView
     private lateinit var iv_favProductoDetalles : ImageView
     private lateinit var iv_productoDetalles : ImageView
+    private lateinit var tv_precioDescuentoProductoDetalles : TextView
+
     private var cantidadProducto : Int = 0
     private var productoGuardado: Producto? = null
     private var usuarioIniciado : Int = 0
@@ -66,10 +70,17 @@ class ProductoFragment : Fragment() {
         tv_precioProductoDetalles = view.findViewById(R.id.tv_precioProductoDetalles)
         tv_descripcionProductoDetalles = view.findViewById(R.id.tv_descripcionProductoDetalles)
         tv_estilo1ProductoDetalles = view.findViewById(R.id.tv_estilo1ProductoDetalles)
+        tv_cantidadProducto = view.findViewById(R.id.tv_cantidadProducto)
+
+        tv_precioDescuentoProductoDetalles = view.findViewById(R.id.tv_precioDescuentoProductoDetalles)
+
+        tv_precioDescuentoProductoDetalles.visibility = View.GONE
+
 
         sharedPreferences = requireActivity().getSharedPreferences("carritoProductos", MODE_PRIVATE)
 
         getProducto()
+        getCantidadProducto()
 
 
         bt_masProducto = view.findViewById(R.id.bt_masProducto)
@@ -124,7 +135,6 @@ class ProductoFragment : Fragment() {
             }
         }
 
-        tv_cantidadProducto = view.findViewById(R.id.tv_cantidadProducto)
 
         return view
     }
@@ -190,13 +200,10 @@ class ProductoFragment : Fragment() {
                 Log.e("Error", "Error en la solicitud: ${t.message}")
             }
         })
-
     }
 
     private fun getProducto(){
         val productoID = arguments?.getInt("productoID", -1)?: -1
-
-
         Log.d("ProductoFragment", "ProductoID Recibido es: $productoID")
 
         val retrofit = Retrofit.Builder()
@@ -225,8 +232,18 @@ class ProductoFragment : Fragment() {
                     tv_estilo1ProductoDetalles.text = producto?.categoria
                     cantidadProducto = producto?.stock.toString().toInt()
                     val nombreImagen = producto?.nombreImagen
-                    val imageResId = context?.resources?.getIdentifier(nombreImagen, "drawable", context?.packageName)
-                    iv_productoDetalles.setImageResource(imageResId!!)
+                    if(producto?.cantidadDescuento!! > 0){
+                        val imageResId = context?.resources?.getIdentifier(nombreImagen+"_oferta", "drawable", context?.packageName)
+                        iv_productoDetalles.setImageResource(imageResId!!)
+                        tv_precioDescuentoProductoDetalles.visibility = View.VISIBLE
+                        tv_precioProductoDetalles.setTextColor(resources.getColor(R.color.burdeos, null))
+                        tv_precioProductoDetalles.text = tv_precioProductoDetalles.text.toString() + " " + "%" + producto.cantidadDescuento.toString().trim()
+                        val precioDescuento = (producto.precio -((producto.precio * producto.cantidadDescuento) / 100))
+                        tv_precioDescuentoProductoDetalles.text = getString(R.string.simboloPesos)+"${precioDescuento.toString().trim()}"
+                    }else{
+                        val imageResId = context?.resources?.getIdentifier(nombreImagen, "drawable", context?.packageName)
+                        iv_productoDetalles.setImageResource(imageResId!!)
+                    }
                     productoGuardado = producto
 
                 } else {
@@ -236,6 +253,41 @@ class ProductoFragment : Fragment() {
 
             override fun onFailure(call: Call<Producto>, t: Throwable) {
                 Log.e("Error", "Error en la solicitud: ${t.message}")
+            }
+        })
+    }
+
+    private fun getCantidadProducto(){
+        val sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
+        val usuarioIniciado = sharedPreferences.getInt("usuarioIniciado", 0)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constantes.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        val itemService = retrofit.create(ItemService::class.java)
+
+        val call = itemService.getItemsByUsuario(usuarioIniciado)
+
+        call.enqueue(object : Callback<List<Item>> {
+            override fun onResponse(call: Call<List<Item>>, response: Response<List<Item>>){
+                if(response.isSuccessful && response.body() != null){
+                    //Los !! sirve para decir que nunca va a ser nulo ese dato
+                    val items = response.body()!!
+                    if(items != null){
+                        for(item in items){
+                            if(item.producto.id == productoGuardado?.id){
+                                tv_cantidadProducto.text = item.cantidad.toString()
+                                return
+                            }
+                        }
+                    }
+                }else{
+                    Log.e("Error", "Codigo de error: ${response.code()}")
+                }
+            }
+            override fun onFailure(call : Call<List<Item>>, t: Throwable){
+                Log.e("Error", "Error en la obtencion del carrito: ${t.message}")
             }
         })
     }

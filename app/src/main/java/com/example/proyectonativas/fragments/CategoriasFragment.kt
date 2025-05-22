@@ -83,7 +83,7 @@ class CategoriasFragment : Fragment(), productosAdapter.imagenProductoListener{
                         val productos = response.body()
 
                     if (!productos.isNullOrEmpty()) {
-                        rv_productosCategoria.adapter = productosAdapter(productos, this@CategoriasFragment)
+                        rv_productosCategoria.adapter = productosAdapter(productos, this@CategoriasFragment, "categorias")
                     } else {
                         Log.e("Error", "La lista de productos está vacía o es null")
                     }

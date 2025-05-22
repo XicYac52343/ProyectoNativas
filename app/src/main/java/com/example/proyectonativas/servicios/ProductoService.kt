@@ -13,6 +13,9 @@ interface ProductoService {
     @GET("api/productos/productoID")
     fun getProductoById(@Query("id") id: Int): Call<Producto>
 
+    @GET("api/productos/homeAndroid")
+    fun getProductosHome(): Call<List<Producto>>
+
     @GET("api/productos/productosFavoritos")
     fun getProductosFavoritos(@Query("id") id: Int): Call<List<Producto>>
 }

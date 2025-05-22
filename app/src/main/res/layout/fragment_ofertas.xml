@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:fontFamily="@font/playfair_display_bold"
-        android:text="@string/descuentosText"
+        android:text="@string/OfertasMenu"
         android:textColor="@color/blanco"
         android:textSize="30sp"
         android:textAlignment="center"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/negro"
     android:gravity="center">
@@ -12,6 +12,7 @@
 
         <TextView
             android:id="@+id/tv_idPrimerGestionUsu"
+            android:layout_width="64dp"
             android:fontFamily="@font/libre_baskerville_bold"
             android:padding="8dp"
             android:text="@string/idPedidoEj"
@@ -23,6 +24,7 @@
             android:id="@+id/tv_nombrePrimerGestionUsu"
             android:fontFamily="@font/libre_baskerville_bold"
             android:padding="8dp"
+            android:layout_width="114dp"
             android:text="@string/nombreUsuarioEJ"
             android:textAlignment="center"
             android:textColor="@color/blanco"
@@ -30,6 +32,7 @@
 
         <TextView
             android:id="@+id/tv_apellidoPrimerGestionUsu"
+            android:layout_width="116dp"
             android:fontFamily="@font/libre_baskerville_bold"
             android:padding="8dp"
             android:text="@string/rolUsuarioEJ"
@@ -39,6 +42,7 @@
 
         <TextView
             android:id="@+id/tv_estadoPrimerGestionUsu"
+            android:layout_width="wrap_content"
             android:fontFamily="@font/libre_baskerville_bold"
             android:padding="8dp"
             android:text="@string/estadoUsuarioEJ"

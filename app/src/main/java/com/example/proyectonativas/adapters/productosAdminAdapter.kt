@@ -26,6 +26,7 @@ class productosAdminAdapter (
         val tv_categoriaPrimerProductoGestionPro = view.findViewById<TextView>(R.id.tv_categoriaPrimerProductoGestionPro)
         val tv_cantidadPrimerProductoGestionPro = view.findViewById<TextView>(R.id.tv_cantidadPrimerProductoGestionPro)
         val bt_editarPrimerGestionPro = view.findViewById<Button>(R.id.bt_editarPrimerGestionPro)
+        val iv_primerProductoGestionPro = view.findViewById<ImageView>(R.id.iv_primerProductoGestionPro)
     }
 
     override fun getItemCount() = productos.size
@@ -41,6 +42,14 @@ class productosAdminAdapter (
         holder.tv_precioPrimerProductoGestionPro.text = "$"+item.precio.toString()
         holder.tv_categoriaPrimerProductoGestionPro.text = item.categoria
         holder.tv_cantidadPrimerProductoGestionPro.text = "Stock: "+item.stock.toString()
+
+        val nombreImagen = item.nombreImagen
+        var imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen, "drawable", holder.itemView.context.packageName)
+        if(item.cantidadDescuento > 0){
+            imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen+"_oferta", "drawable", holder.itemView.context.packageName)
+        }
+        holder.iv_primerProductoGestionPro.setImageResource(imageResId)
+
         holder.bt_editarPrimerGestionPro.setOnClickListener{
             listenerButton.onEditarClick(item)
         }

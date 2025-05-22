@@ -26,24 +26,25 @@ import retrofit2.Callback
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectonativas.modelos.Item
 import com.example.proyectonativas.modelos.Pedido
+import com.example.proyectonativas.modelos.Producto
 import com.example.proyectonativas.servicios.ItemService
 import com.example.proyectonativas.servicios.PedidoService
 
-class CarritoFragment : Fragment() {
+class CarritoFragment : Fragment(), carritoAdapter.cantidadListener {
     @SuppressLint("MissingInflatedId")
-    private lateinit var bt_menosPrimerProCarrito : Button
-    private lateinit var bt_masPrimerProCarrito : Button
+    private lateinit var bt_menosPrimerProCarrito: Button
+    private lateinit var bt_masPrimerProCarrito: Button
 
 
-    private lateinit var tv_cantidadPrimerProCarrito : TextView
-    private lateinit var SharedPreferences : SharedPreferences
-    private lateinit var rv_productoCarrito : RecyclerView
-    private lateinit var tv_totalPrimerProCarrito : TextView
-    private lateinit var tv_totalCarrito : TextView
-    private lateinit var tv_vacioCarrito : TextView
-    private lateinit var call : Call<List<Item>>
-    private lateinit var bt_comprarCarrito : Button
-    private lateinit var items : List<Item>
+    private lateinit var tv_cantidadPrimerProCarrito: TextView
+    private lateinit var SharedPreferences: SharedPreferences
+    private lateinit var rv_productoCarrito: RecyclerView
+    private lateinit var tv_totalPrimerProCarrito: TextView
+    private lateinit var tv_totalCarrito: TextView
+    private lateinit var tv_vacioCarrito: TextView
+    private lateinit var call: Call<List<Item>>
+    private lateinit var bt_comprarCarrito: Button
+    private lateinit var items: List<Item>
     private var totalCarrito = 0.0
 
     override fun onCreateView(
@@ -69,36 +70,79 @@ class CarritoFragment : Fragment() {
         tv_totalCarrito = view.findViewById(R.id.tv_totalCarrito)
         bt_comprarCarrito = view.findViewById(R.id.bt_comprarCarrito)
 
-        bt_comprarCarrito.setOnClickListener{
-            if(validarStock()){
-                realizarPedido()
+        bt_comprarCarrito.setOnClickListener {
+            if (tv_vacioCarrito.visibility != View.VISIBLE) {
+                if (validarStock()) {
+                    realizarPedido()
+                }
+            }else{
+                Toast.makeText(requireContext(), "No hay productos", Toast.LENGTH_SHORT)
+                    .show()
             }
-        }
 
+        }
         rv_productoCarrito = view.findViewById(R.id.rv_productoCarrito)
         getItems()
 
         return view
     }
 
-    private fun aumentarCantidad(){
-        val cnatidadActual = tv_cantidadPrimerProCarrito.text.toString().toInt()
+    override fun aumentarCantidad(item: Item) {
+        val cnatidadActual = item.cantidad.toString().toInt()
         val nuevaCantidad = cnatidadActual + 1
-        tv_cantidadPrimerProCarrito.text = nuevaCantidad.toString().trim()
+        actualizarItemCarrito(nuevaCantidad, item.producto)
+        getItems()
     }
 
-    private fun disminuirCantidad(){
-        if(tv_cantidadPrimerProCarrito.text.toString().toInt() > 0){
-            val cnatidadActual = tv_cantidadPrimerProCarrito.text.toString().toInt()
+    override fun disminuirCantidad(item: Item) {
+        if (item.cantidad.toString().toInt() >= 0) {
+            val cnatidadActual = item.cantidad.toString().toInt()
             val nuevaCantidad = cnatidadActual - 1
-            tv_cantidadPrimerProCarrito.text = nuevaCantidad.toString().trim()
-        }else{
+            actualizarItemCarrito(nuevaCantidad, item.producto)
+            getItems()
+        } else {
             Toast.makeText(requireContext(), "No se puede decrementar más", Toast.LENGTH_SHORT)
                 .show()
         }
     }
 
-    private fun getItems(){
+    private fun actualizarItemCarrito(cantidadProducto: Int, producto: Producto) {
+        val sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
+        val usuarioIniciado = sharedPreferences.getInt("usuarioIniciado", 0)
+
+        val retrofit = Retrofit.Builder()
+            .baseUrl(Constantes.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        val itemService = retrofit.create(ItemService::class.java)
+
+        val nuevoItem = Item()
+        nuevoItem.setProducto(producto)
+        nuevoItem.setCantidad(cantidadProducto)
+
+        val call = itemService.crearItem(usuarioIniciado, nuevoItem)
+
+        call.enqueue(object : Callback<Item> {
+            //Si la solicitud fue exitosa se ejecuta esta funcion
+            //Este metodo recibe dos parametros, la llamada o solicitud que se le hizo
+            //Y la respuesta que tuvimosd desde la API
+            override fun onResponse(call: Call<Item>, response: Response<Item>) {
+                //Si la respuesta viene con un codigo de exito se ejecuta el iff
+                if (response.isSuccessful && response.body() != null) {
+                    Log.e("Item", "Item Actualizado Exitosamente")
+                } else {
+                    Log.e("Error", "Error En la respuesta: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Item>, t: Throwable) {
+                Log.e("Error", "Error en la solicitud: ${t.message}")
+            }
+        })
+    }
+
+    private fun getItems() {
         val sharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
         val usuarioIniciado = sharedPreferences.getInt("usuarioIniciado", 0)
         totalCarrito = 0.0
@@ -112,43 +156,48 @@ class CarritoFragment : Fragment() {
         call = itemService.getItemsByUsuario(usuarioIniciado)
 
         call.enqueue(object : Callback<List<Item>> {
-            override fun onResponse(call: Call<List<Item>>, response: Response<List<Item>>){
-                if(response.isSuccessful && response.body() != null){
+            override fun onResponse(call: Call<List<Item>>, response: Response<List<Item>>) {
+                if (response.isSuccessful && response.body() != null) {
                     //Los !! sirve para decir que nunca va a ser nulo ese dato
                     items = response.body()!!
-                    if(items != null){
-                        if(!items.isEmpty()){
+                    var totalCarrito = 0.0
+                    if (items != null) {
+                        if (!items.isEmpty()) {
                             tv_vacioCarrito.visibility = View.GONE
-                        }else{
-                            for(item in items){
-                                totalCarrito = totalCarrito + (item.producto.precio * item.cantidad)
-                            }
+                            totalCarrito = items.get(0).carrito.totalCarrito.toDouble()
+                        } else {
                             tv_vacioCarrito.visibility = View.VISIBLE
                         }
-                        tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
-                        rv_productoCarrito.adapter = carritoAdapter(items)
+                        tv_totalCarrito.text =
+                            getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
+                        rv_productoCarrito.adapter = carritoAdapter(items, this@CarritoFragment)
                     }
-                }else{
+                } else {
                     Log.e("Error", "Codigo de error: ${response.code()}")
                 }
             }
-            override fun onFailure(call : Call<List<Item>>, t: Throwable){
+
+            override fun onFailure(call: Call<List<Item>>, t: Throwable) {
                 Log.e("Error", "Error en la obtencion del carrito: ${t.message}")
             }
         })
     }
 
     private fun validarStock(): Boolean {
-        for(item in items){
-            if(item.cantidad > item.producto.stock){
-                Toast.makeText(requireContext(), "No hay suficiente stock de ${item.producto.nombre}, solo hay ${item.producto.stock}", Toast.LENGTH_SHORT).show()
+        for (item in items) {
+            if (item.cantidad > item.producto.stock) {
+                Toast.makeText(
+                    requireContext(),
+                    "No hay suficiente stock de ${item.producto.nombre}, solo hay ${item.producto.stock}",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return false
             }
         }
         return true
     }
 
-    private fun realizarPedido(){
+    private fun realizarPedido() {
         SharedPreferences = requireActivity().getSharedPreferences("UserData", MODE_PRIVATE)
         val usuarioIniciado = SharedPreferences.getInt("usuarioIniciado", 0)
 
@@ -160,19 +209,25 @@ class CarritoFragment : Fragment() {
 
         val callPedido = pedidoService.crearProductoByUsuario(usuarioIniciado)
 
-        callPedido.enqueue(object : Callback<Pedido>{
-            override fun onResponse(call : Call<Pedido>, response : Response<Pedido>){
-                if(response.isSuccessful && response.body() !=null){
-                    rv_productoCarrito.adapter = carritoAdapter(emptyList())
-                    tv_totalCarrito.text = getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
+        callPedido.enqueue(object : Callback<Pedido> {
+            override fun onResponse(call: Call<Pedido>, response: Response<Pedido>) {
+                if (response.isSuccessful && response.body() != null) {
+                    rv_productoCarrito.adapter = carritoAdapter(emptyList(), this@CarritoFragment)
+                    tv_totalCarrito.text =
+                        getString(R.string.totalLabel) + getString(R.string.simboloPesos) + totalCarrito
                     tv_vacioCarrito.visibility = View.VISIBLE
-                }else{
+                    Toast.makeText(requireContext(), "Pedido Realizado Exitosamente", Toast.LENGTH_SHORT)
+                        .show()
+                } else {
                     Log.e("Error", "Codigo de error: ${response.code()}")
                 }
             }
-            override fun onFailure(call : Call<Pedido>, t: Throwable){
+
+            override fun onFailure(call: Call<Pedido>, t: Throwable) {
                 Log.e("Error", "Error en la creacion del pedido: ${t.message}")
             }
         })
     }
+
+
 }

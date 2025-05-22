@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectonativas.R
 import com.example.proyectonativas.modelos.Producto
 
 class productosAdapter(
     private val productos:List<Producto>,
-    private val listenerImagen : imagenProductoListener
+    private val listenerImagen : imagenProductoListener,
+    private val fragmentProveniente: String
     ): RecyclerView.Adapter<productosAdapter.ViewHolder>() {
 
         interface imagenProductoListener{
@@ -25,7 +27,7 @@ class productosAdapter(
         val tv_precioPrimerProductoCategorias = view.findViewById<TextView>(R.id.tv_precioPrimerProductoCategorias)
         val iv_primerProductoCategorias = view.findViewById<ImageView>(R.id.iv_primerProductoCategorias)
         val bt_agregarPrimerProducto = view.findViewById<Button>(R.id.bt_agregarPrimerProducto)
-
+        val ly_productoGeneral = view.findViewById<View>(R.id.ly_productoGeneral)
     }
 
     override fun getItemCount() = productos.size
@@ -45,9 +47,28 @@ class productosAdapter(
         //	Contexto asociado a esa vista, que permite acceder a recursos desde ahí
         //Conseguir el ID de la imagen usando el contexto o nombre de la imagen en el archivo de recursos que esta en la actividad
         val nombreImagen = item.nombreImagen
-        val imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen, "drawable", holder.itemView.context.packageName)
+        var imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen, "drawable", holder.itemView.context.packageName)
+        if(item.cantidadDescuento > 0){
+            imageResId = holder.itemView.context.resources.getIdentifier(nombreImagen+"_oferta", "drawable", holder.itemView.context.packageName)
+        }
         holder.iv_primerProductoCategorias.setImageResource(imageResId)
 
+        val layoutParams = holder.ly_productoGeneral.layoutParams
+
+
+        if(fragmentProveniente.equals("categorias")){
+            layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            holder.ly_productoGeneral.layoutParams = layoutParams
+        }
+        if(fragmentProveniente.equals("home")){
+            layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT
+            holder.ly_productoGeneral.layoutParams = layoutParams
+        }
+        if(fragmentProveniente.equals("vendidos")){
+            layoutParams.width = ViewGroup.LayoutParams.WRAP_CONTENT
+            holder.ly_productoGeneral.layoutParams = layoutParams
+            holder.iv_primerProductoCategorias.background = ContextCompat.getDrawable(holder.itemView.context, R.drawable.degradado_producto_gris)
+        }
 
         holder.iv_primerProductoCategorias.setOnClickListener{
             listenerImagen.onImagenClick(item)
