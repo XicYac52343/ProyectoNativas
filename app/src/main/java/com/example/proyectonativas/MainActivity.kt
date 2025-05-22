@@ -1,8 +1,11 @@
 package com.example.proyectonativas
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawerLayout: androidx.drawerlayout.widget.DrawerLayout
     private lateinit var drawerToogle: ActionBarDrawerToggle
     private lateinit var navView2: NavigationView
+    private lateinit var sharedPreference: SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +68,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         navView2.setNavigationItemSelectedListener(this)
 
+        val menu = navView2.menu
+
+        sharedPreference = getSharedPreferences("UserData", Context.MODE_PRIVATE)
+
+        val getEmail = sharedPreference.getString("rol", "") ?: ""
+        if(getEmail == "admin"){
+            menu.findItem(R.id.PefilAdminFragmentPrincipal)?.isVisible = true
+            menu.findItem(R.id.MiPerfilFragmentPrincipal)?.isVisible = false
+            sharedPreference.edit().remove("rol").apply()
+        }else{
+            menu.findItem(R.id.PefilAdminFragmentPrincipal)?.isVisible = false
+        }
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -92,4 +109,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
     }
+
+
+
 }

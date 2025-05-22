@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearProductos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    android:background="@color/negro">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iv_primerProductoCarrito"
+            android:layout_width="85dp"
+            android:layout_height="103dp"
+            android:background="@drawable/degradado_producto_gris"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.52"
+            app:srcCompat="@drawable/fragancia_urbe" />
+
+
+        <TextView
+            android:id="@+id/tv_nombrePrimerProductoCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/libre_baskerville_bold"
+            android:text="@string/nombreProducto"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_menosPrimerProCarrito"
+            app:layout_constraintStart_toEndOf="@+id/iv_primerProductoCarrito"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.30" />
+
+        <TextView
+            android:id="@+id/tv_precioUniPrimerProductoCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/libre_baskerville"
+            android:text="@string/precioCarrito"
+            android:textColor="@color/blanco"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_nombrePrimerProductoCarrito"
+            app:layout_constraintStart_toStartOf="@+id/tv_nombrePrimerProductoCarrito"
+            app:layout_constraintTop_toBottomOf="@+id/tv_nombrePrimerProductoCarrito"
+            app:layout_constraintVertical_bias="0.318" />
+
+        <Button
+            android:id="@+id/bt_menosPrimerProCarrito"
+            style="@style/btnprod"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:padding="0dp"
+            android:text="@string/menos"
+            android:textSize="28dp"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@+id/tv_totalPrimerProCarrito"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cantidadPrimerProCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/libre_baskerville"
+            android:text="@string/cantidadProductoCarrito"
+            android:textColor="@color/blanco"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/bt_masPrimerProCarrito"
+            app:layout_constraintEnd_toEndOf="@+id/bt_masPrimerProCarrito"
+            app:layout_constraintStart_toStartOf="@+id/bt_menosPrimerProCarrito"
+            app:layout_constraintTop_toBottomOf="@+id/bt_menosPrimerProCarrito"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/bt_masPrimerProCarrito"
+            style="@style/btnprod"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:padding="0dp"
+            android:text="@string/mas"
+            android:textSize="28dp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bt_menosPrimerProCarrito"
+            app:layout_constraintStart_toStartOf="@+id/bt_menosPrimerProCarrito" />
+
+        <TextView
+            android:id="@+id/tv_totalPrimerProCarrito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/libre_baskerville"
+            android:text="@string/subtotalProductoCarrito"
+            android:textColor="@color/blanco"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/bt_menos"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

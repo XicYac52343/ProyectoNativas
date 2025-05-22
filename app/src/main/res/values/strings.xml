@@ -2,8 +2,85 @@
     <string name="app_name">Vent Ford</string>
     <string name="categoriaExclusivos">Perfumes Exclusivos</string>
     <string name="nombreProducto">Perfume</string>
-    <string name="precioProducto">$111.111</string>
+    <string name="precioProducto">$120.000</string>
+    <string name="categoriaMasVendidos">Más vendidos</string>
     <string name="añadir">Añadir</string>
+    <string name="descuento">-%50</string>
+    <string name="descripcionProducto">Lume, un toque exclusivo y elegante que te acompañará todo tu día.</string>
+    <string name="estiloProducto1">Amaderado</string>
+    <string name="estiloSeparador"> | </string>
+    <string name="estiloProducto2">Exclusivo</string>
+    <string name="nombreUsuario">Nombre Usuario</string>
+    <string name="panelAdmin">Panel de Admin</string>
+    <string name="pedidosGrafica">Pedidos</string>
+    <string name="ingresosGrafica">Ingresos</string>
+    <string name="usuariosGrafica">Usuarios</string>
+    <string name="gestionProductos">Gestión Productos</string>
+    <string name="productosGrafica">Productos</string>
+    <string name="gestionPedidos">Gestión Pedidos</string>
+    <string name="gestionUsuarios">Gestión Usuarios</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
+    <string name="categoriaAromaFresco">Aroma Fresco</string>
+    <string name="stockProducto">Stock: 20</string>
+    <string name="editar">Editar</string>
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="nombre">Nombre</string>
+    <string name="precio">Precio</string>
+    <string name="categoria">Categoría</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="descripcion">Descripción</string>
+    <string name="descuentoText">Descuento</string>
+    <string name="descuentosText">Descuentos</string>
+    <string name="crear">Crear</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="carrito">Carrito</string>
+    <string name="total">Total</string>
+    <string name="mas">+</string>
+    <string name="menos">-</string>
+    <string name="cantidadInicial">0</string>
+    <string name="favorito">Favorito</string>
+    <string name="precioCarrito">Precio: $120.500</string>
+    <string name="cantidadProductoCarrito">3</string>
+    <string name="cantidadProductoCarritoLabel">Cantidad: </string>
+    <string name="subtotalProductoCarrito">$262.000</string>
+    <string name="comprarCarrito">Comprar</string>
+    <string name="totalCarrito">Total: $0.0</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="admin">Admin</string>
+    <string name="administracion">Administración</string>
+    <string name="cantidadProducto">0</string>
+    <string name="precioLabel">Precio: </string>
+    <string name="subTotalLabel">Subtotal: </string>
+    <string name="simboloPesos">$</string>
+    <string name="totalLabel">Total: </string>
+    <string name="noHayProductos">No hay Productos </string>
+
+    <string name="id">ID</string>
+    <string name="estadoPedido">Estado Pedido</string>
+    <string name="fecha">Fecha</string>
+    <string name="monto">Monto</string>
+
+    <string name="idPedidoEj">121</string>
+    <string name="estadoPedidoEj">Enviado</string>
+    <string name="fechaPedidoEj">11-03-2025</string>
+
+    <string name="rol">Rol</string>
+    <string name="estado">Estado</string>
+
+    <string name="nombreUsuarioEJ">Juan</string>
+    <string name="rolUsuarioEJ">Admin</string>
+    <string name="estadoUsuarioEJ">Activo</string>
+
+    <string name="editarPerfil">Editar Perfil</string>
+    <string name="correoElectronica">Correo Electrónico</string>
+    <string name="numeroTelefono">Número de Teléfono</string>
+    <string name="apellido">Apellido</string>
+
+    <string name="cliente">Cliente</string>
+    <string name="metodoPago">Método de pago</string>
+    <string name="pse">PSE</string>
+
     <string name="nombre_app">Vent Ford</string>
     <string name="sloganSplash">Descubre la esencia</string>
     <string name="sloganpart2">de lujo</string>
@@ -66,4 +143,8 @@
     <string name="btnrecuperar">Recuperar Contrasela</string>
     <string name="LinkRecuperarContra">Olvidé mi contraseña</string>
 
+    <string name="ubicacion_tienda_1">Tienda Aroma frescos</string>
+    <string name="ubicacion_tienda_2">Tienda Olores citricos</string>
+    <string name="registrotitleGoogle">Terminar resgitro \n- Google</string>
+    <string name="inicioMenu">Inicio</string>
 </resources>

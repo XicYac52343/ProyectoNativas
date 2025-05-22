@@ -1,33 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group
-       android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
+        <item
+            android:id="@+id/productosFragment"
+            android:title="@string/inicioMenu" />
 
-        <item android:id="@+id/productosFragment"
-            android:title="@string/productosMenu"
-            />
+        <item
+            android:id="@+id/categoriasFragment"
+            android:title="@string/productosMenu" />
 
-    <item android:id="@+id/categoriasFragment"
-        android:title="@string/categoriaMenu"/>
+        <item
+            android:id="@+id/favoritoFragment"
+            android:title="@string/favoritosMenu" />
 
-    <item android:id="@+id/favoritoFragment"
-        android:title="@string/favoritosMenu"/>
+        <item
+            android:id="@+id/OfertasFragment"
+            android:title="@string/OfertasMenu" />
 
-        <item android:id="@+id/OfertasFragment"
-            android:title="@string/OfertasMenu"/>
-        </group>
-    <item android:id="@+id/TiendasFragment"
-        android:title="@string/Tiendas"/>
+        <item
+            android:id="@+id/CarritoFragment"
+            android:title="@string/carrito" />
+    </group>
+    <item
+        android:id="@+id/TiendasFragment"
+        android:title="@string/Tiendas" />
 
-    <item android:title=" ">
+    <item
+        android:id="@+id/MiPerfilFragmentPrincipal"
+        android:title=" ">
         <menu>
-            <item android:id="@+id/MiPerfilFragment"
-            android:title="@string/Micuenta"/>
+            <item
+                android:id="@+id/MiPerfilFragment"
+                android:title="@string/Micuenta" />
 
             <item
-            android:id="@+id/CerrarSesion"
-            android:title="@string/CerrarSesion"/>
+                android:id="@+id/CerrarSesion"
+                android:title="@string/CerrarSesion" />
         </menu>
     </item>
+
+    <item
+        android:id="@+id/PefilAdminFragmentPrincipal"
+        android:title="@string/panelAdmin">
+        <menu>
+            <item
+                android:id="@+id/PerfilAdminFragment"
+                android:title="@string/administracion" />
+            <item
+                android:id="@+id/GestionarProductosFragment"
+                android:title="@string/gestionProductos" />
+            <item
+                android:id="@+id/GestionarPedidosFragment"
+                android:title="@string/gestionPedidos" />
+            <item
+                android:id="@+id/GestionarUsuariosFragment"
+                android:title="@string/gestionUsuarios" />
+        </menu>
+    </item>
+
 </menu>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/negro">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/vwSuperior"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/gris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+        <ImageView
+            android:id="@+id/iv_agregarProducto"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="@drawable/degradado_producto_gris"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vwSuperior"
+            app:srcCompat="@drawable/anadir_icono"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/vwInferior"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/gris"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agregarProducto"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/et_nombreAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/nombretitle"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textColorHint="@color/gris"
+            android:textSize="29sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_agregarProducto"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_precioAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/precio"
+            android:textColorHint="@color/gris"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="29sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_nombreAgregarPro"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_categoriaAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/categoria"
+            android:textColorHint="@color/gris"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="29sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_precioAgregarPro"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_cantidadAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/cantidad"
+            android:textColorHint="@color/gris"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="29sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_categoriaAgregarPro"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_descripcionAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/descripcion"
+            android:textColorHint="@color/gris"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="29sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_cantidadAgregarPro"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/et_descuentoAgregarPro"
+            style="@style/etBordeDorado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:fontFamily="@font/playfair_display_bold"
+            android:hint="@string/descuentoText"
+            android:textColorHint="@color/gris"
+            android:inputType="text"
+            android:padding="7dp"
+            android:textAlignment="center"
+            android:textColor="@color/blanco"
+            android:textSize="29sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/linearBotones"
+            app:layout_constraintHorizontal_bias="0.50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_descripcionAgregarPro"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/linearBotones"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_descuentoAgregarPro"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints,UselessLeaf">
+
+            <Button
+                android:id="@+id/bt_crearProducto"
+                style="@style/botonFondoDorado"
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:padding="0dp"
+                android:text="@string/crear"
+                android:textSize="28dp"
+                app:backgroundTint="@null" />
+
+            <Button
+                android:id="@+id/bt_cancelarAgregarP"
+                style="@style/botonFondoDorado"
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/playfair_display_bold"
+                android:padding="0dp"
+                android:text="@string/cancelar"
+                android:textSize="28dp"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

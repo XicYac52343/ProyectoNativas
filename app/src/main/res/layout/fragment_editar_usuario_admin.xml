@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/degradadoFondo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_tituloEditarUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:gravity="center"
+            android:text="@string/editarPerfil"
+            android:textColor="@color/blanco"
+            android:textSize="30sp" />
+
+        <ImageView
+
+            android:id="@+id/iv_imagenEditarUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:layout_marginVertical="15dp"
+            app:srcCompat="@drawable/foto_perfil" />
+
+        <!--editar foto-->
+        <!--nombres-->
+
+        <TextView
+            android:id="@+id/tv_nombreTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:textStyle="bold"
+            android:id="@+id/et_nombreEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombretitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+
+        <!--apellidos-->
+        <TextView
+            android:id="@+id/tv_apellidoTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/apellido"
+            android:textSize="20sp"
+            android:layout_marginStart="10sp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:textStyle="bold"
+            android:id="@+id/et_apellidoEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/apellidotitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+
+        <!--correo-->
+        <TextView
+            android:id="@+id/tv_correoTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/correoElectronica"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_correoEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/correotitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+        <!--telefono-->
+
+        <TextView
+            android:id="@+id/tv_telefonoTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/numeroTelefono"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/et_telefonoEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/telefonotitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco" />
+
+        <TextView
+            android:id="@+id/tv_estadoTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rol"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/et_rolEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/telefonotitle"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco" />
+
+        <TextView
+            android:id="@+id/tv_estadoTituloEditarUsuario"
+            style="@style/Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estado"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:textColor="@color/blanco"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/et_estadoEditarUsuario"
+            style="@style/Edittex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="@string/telefonotitle"
+            android:textColor="@color/blanco"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/bt_guardarCambioEditarUsuario"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar"
+            app:backgroundTint="@color/negro"
+            android:textColor="@color/dorado"
+            android:fontFamily="@font/playfair_display_bold"
+            />
+    </LinearLayout>
+</ScrollView>
