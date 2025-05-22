@@ -17,4 +17,6 @@ class EditarProductoFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_editar_producto, container, false)
         return view
     }
+
+
 }
